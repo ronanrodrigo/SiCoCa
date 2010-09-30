@@ -1,0 +1,23 @@
+<h1>Placas</h1>
+
+<table>
+  <tr>
+    <th>Endereco</th>
+    <th>Cidade</th>
+    <th>Tamanho</th>
+    <th>Descricao</th>
+    <th></th>
+  </tr>
+
+<% @placas.each do |placa| %>
+  <tr>
+    <td><%= placa.endereco %></td>
+    <td><%= placa.cidade %></td>
+    <td><%= placa.tamanho %></td>
+    <td><%= placa.descricao %></td>
+    <td class="botoes"><%= link_to 'Show', placa %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />

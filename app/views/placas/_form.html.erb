@@ -1,0 +1,32 @@
+<%= form_for(@placa) do |f| %>
+
+  <% if @placa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@placa.errors.count, "error") %> prohibited this placa from being saved:</h2>
+
+      <ul>
+      <% @placa.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label "Endereço: " %>
+    <%= f.text_field :endereco %>
+  </div>
+  <div class="field">
+    <%= f.label "Cidade: " %>
+    <%= f.text_field :cidade %>
+  </div>
+  <div class="field">
+    <%= f.label "Tamanho" %>
+    <%= f.text_field :tamanho %>
+  </div>
+  <div class="field">
+    <%= f.label "Descrição: " %>
+    <%= f.text_field :descricao %>
+  <div class="actions">
+    <%= f.submit 'Salvar' %>
+<% end %>

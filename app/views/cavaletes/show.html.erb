@@ -1,0 +1,33 @@
+<h1>Cavalete <%= @cavalete.id %> <b id="notice"><%= notice %></b></h1>
+<fieldset class="ui-widget-content ui-corner-all fieldset">
+    <legend>Dados do cavalete</legend>
+	<p class="show">
+	  <b class="show">Endereço:</b>
+	  <%= @cavalete.placa.endereco %>
+	</p>
+
+	<p class="show">
+	  <b class="show">Cidade:</b>
+	  <%= @cavalete.placa.cidade %>
+	</p>
+
+	<p class="show">
+	  <b class="show">Tamanho:</b>
+	  <%= @cavalete.placa.tamanho %>
+	</p>
+
+	<p class="show">
+	  <b class="show">Descricao:</b>
+	  <%= @cavalete.placa.descricao %>
+	</p>
+
+	<p class="show">
+	  <b class="show">Irregular:</b>
+	  <%= @cavalete.irregular %>
+	</p>
+</fieldset>
+
+<div class="botoes_rodape">
+<%= link_to 'Editar', edit_cavalete_path(@cavalete) %> |
+<%= link_to 'Voltar', cavaletes_path %>
+</div>

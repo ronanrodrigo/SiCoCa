@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  tipo_ajuda: MyString
+  valor_ajuda: 1.5
+  pessoa: 
+
+two:
+  tipo_ajuda: MyString
+  valor_ajuda: 1.5
+  pessoa: 

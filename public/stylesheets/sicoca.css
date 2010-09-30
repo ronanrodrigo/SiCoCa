@@ -1,0 +1,92 @@
+div.content, div.toolbar{
+	padding: 4px;
+	padding-right: 6px;
+	margin: 4px;
+	width: 788px;
+}
+body {
+	text-align:center; /* hack para o IE */	
+}
+a.toolbarimg{
+	padding: 0px 0px 0px 0px;
+	margin-left: 5px;
+	width: 796px;
+	height: 100px;
+}
+img.header{
+	margin-top: -5px;
+	margin-left: -13px;
+}
+div.main{
+	margin-left: 25%;
+	width: 800px;
+	margin:0 auto;			
+	padding: 10px;
+	text-align:left; /* "remédio" para o hack do IE */
+}
+div.field{
+	margin: 10px;
+}
+div.actions{
+	margin-top: 10px;
+}
+tr{
+	text-align: center;
+}
+b.show{
+  float:left;
+  width:13%;
+  margin-right:0.5em;
+  text-align:right;
+  font-weight:bold;	
+}
+p.show{
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+th{
+	text-align: center;
+}
+label {
+  float:left;
+  width:180px;
+  margin-right:0.5em;
+  padding-top:4px;
+  text-align:right;
+  font-weight:bold;
+}
+h1 {
+	font-size: 14px;
+}
+
+input[type="checkbox"] {
+	margin-top: 6px;
+}
+h1 {
+	margin: 0px 0px 10px 0px; 
+	padding: 5px 0px 5px 0px;
+	border: 1px solid #aaaaaa; 
+	background: #cccccc url(images/ui-bg_highlight-soft_75_cccccc_1x100.png) 50% 50% repeat-x; 
+	color: #222222; 
+	font-weight: bold; 
+	-moz-border-radius: 4px; 
+	-webkit-border-radius: 4px; 
+	border-radius: 4px;
+}
+div.botoes_rodape{
+	padding-top: 10px;
+}
+td.botoes{
+	width: 10px;
+}
+legend{
+	margin-left: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+fieldset{
+	margin-bottom: 5px;
+}
+#notice{
+	color: #008000;
+}

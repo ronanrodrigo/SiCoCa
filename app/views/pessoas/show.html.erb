@@ -1,0 +1,15 @@
+<h1>Pessoa <%= @pessoa.id %> <b id="notice"><%= notice %></b></h1>
+
+<p>
+  <b class="show">Nome:</b>
+  <%= @pessoa.nome %>
+</p>
+
+<p>
+  <b class="show">Cpf:</b>
+  <%= @pessoa.cpf %>
+</p>
+
+<div class="botoes_rodape">
+<%= link_to 'Voltar', pessoas_path %>
+</div>

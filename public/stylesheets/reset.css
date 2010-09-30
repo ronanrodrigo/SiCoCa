@@ -1,0 +1,17 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+	list-style:none;
+	vertical-align:baseline;
+	font-size: 12px;
+	font-family: Helvetica;
+}
+h1 {
+	margin: 10px;
+	width: 788px;
+	text-align: center;
+}
+table {
+	width: 788px;
+}

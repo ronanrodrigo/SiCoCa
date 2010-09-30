@@ -1,0 +1,11 @@
+<h1>Tipo de usuário <%= @tipo_usuario.id %> <b id="notice"><%= notice %></b></h1>
+
+<p>
+  <b class="show">Descricao:</b>
+  <%= @tipo_usuario.descricao %>
+</p>
+
+<div class="botoes_rodape">
+<%= link_to 'Editar', edit_tipo_usuario_path(@tipo_usuario) %> |
+<%= link_to 'Voltar', tipo_usuarios_path %>
+</div>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  endereco: MyString
+  cidade: MyString
+  tamanho: MyString
+  descricao: MyString
+
+two:
+  endereco: MyString
+  cidade: MyString
+  tamanho: MyString
+  descricao: MyString

@@ -1,0 +1,19 @@
+<h1>Pessoas</h1>
+
+<table>
+  <tr>
+    <th>Nome</th>
+    <th>Cpf</th>
+    <th></th>
+  </tr>
+
+<% @pessoas.each do |pessoa| %>
+  <tr>
+    <td><%= pessoa.nome %></td>
+    <td><%= pessoa.cpf %></td>
+    <td class="botoes"><%= link_to 'Visualizar', pessoa %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />

@@ -1,0 +1,2 @@
+module CaboEleitoralsHelper
+end

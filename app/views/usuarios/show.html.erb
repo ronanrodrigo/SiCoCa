@@ -1,0 +1,26 @@
+<h1>Usuário <%= @usuario.id %> <b id="notice"><%= notice %></b></h1>
+
+<p>
+  <b class="show">Email:</b>
+  <%= @usuario.email %>
+</p>
+
+<p>
+  <b class="show">Senha:</b>
+  <%= @usuario.senha %>
+</p>
+
+<p>
+  <b class="show">Tipo usuario:</b>
+  <%= @usuario.tipo_usuario %>
+</p>
+
+<p>
+  <b class="show">Pessoa:</b>
+  <%= @usuario.pessoa %>
+</p>
+
+<div class="botoes_rodape">
+<%= link_to 'Editar', edit_usuario_path(@usuario) %> |
+<%= link_to 'Voltar', usuarios_path %>
+</div>

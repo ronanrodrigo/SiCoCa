@@ -1,0 +1,29 @@
+<h1>Placas em residências</h1>
+
+<table>
+  <tr>
+    <th>Autorizada</th>
+    <th>Cidade</th>
+    <th>Endereço</th>
+	<th>Autorizador</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @placa_casas.each do |placa_casa| %>
+  <tr>
+    <td><%= placa_casa.autoriza %></td>
+    <td><%= placa_casa.placa.cidade %></td>
+    <td><%= placa_casa.placa.endereco %></td>
+    <td><%= placa_casa.pessoa.nome %></td>
+    <td class="botoes"><%= link_to 'Visualizar', placa_casa %></td>
+    <td class="botoes"><%= link_to 'Editar', edit_placa_casa_path(placa_casa) %></td>
+    <td class="botoes"><%= link_to 'Remover', placa_casa, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Cadastrar placa', new_placa_casa_path %>

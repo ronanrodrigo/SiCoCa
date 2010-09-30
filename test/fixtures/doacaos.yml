@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  valor_doaco: 1.5
+  data_doacao: 2010-09-25
+  pessoa: 
+
+two:
+  valor_doaco: 1.5
+  data_doacao: 2010-09-25
+  pessoa: 

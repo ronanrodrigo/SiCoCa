@@ -1,0 +1,25 @@
+<h1>Carro de som <%= @carro_som.id %> <b id="notice"><%= notice %></b></h1>
+
+<p>
+  <b class="show">Placa carro:</b>
+  <%= @carro_som.placa_carro %>
+</p>
+
+<p>
+  <b class="show">Modelo carro:</b>
+  <%= @carro_som.modelo_carro %>
+</p>
+
+<p>
+  <b class="show">Doador:</b>
+  <%= @carro_som.pessoa.nome %>
+</p>
+<p>
+  <b class="show">CPF:</b>
+  <%= @carro_som.pessoa.cpf %>
+</p>
+
+<div class="botoes_rodape">
+<%= link_to 'Editar', edit_carro_som_path(@carro_som) %> |
+<%= link_to 'Voltar', carro_soms_path %>
+</div>

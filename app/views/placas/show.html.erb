@@ -1,0 +1,26 @@
+<h1>Placa <%= @placa.id %> <b id="notice"><%= notice %></b></h1>
+
+<p>
+  <b class="show">Endereco:</b>
+  <%= @placa.endereco %>
+</p>
+
+<p>
+  <b class="show">Cidade:</b>
+  <%= @placa.cidade %>
+</p>
+
+<p>
+  <b class="show">Tamanho:</b>
+  <%= @placa.tamanho %>
+</p>
+
+<p>
+  <b class="show">Descricao:</b>
+  <%= @placa.descricao %>
+</p>
+
+<div class="botoes_rodape">
+<%= link_to 'Editar', edit_placa_path(@placa) %> |
+<%= link_to 'Voltar', placas_path %>
+</div>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  placa_carro: MyString
+  modelo_carro: MyString
+  pessoa: 
+
+two:
+  placa_carro: MyString
+  modelo_carro: MyString
+  pessoa: 
