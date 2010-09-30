@@ -23,13 +23,13 @@
 		<a class="toolbarimg" href="http://localhost:3000">
 			<img class="header" src="../../../images/assis.png">
 		</a>
-		<div class="ui-widget-content ui-corner-all toolbar ui-widget-header">
-			<%= link_to "Manter bônus", doacaos_path %>
-			<%= link_to "Manter placas", placa_casas_path %>
-			<%= link_to "Manter cavaletes", cavaletes_path %>
-			<%= link_to "Manter cabos eleitorais", cabo_eleitorals_path %>
-			<%= link_to "Manter carros de som", carro_soms_path %>
-			<%= link_to "Manter usuários", usuarios_path %>
+		<div class="ui-widget-content ui-corner-all toolbar ui-widget-header barrabotoes">
+			<%= link_to "Manter bônus", doacaos_path, :class => "botaomenu" %>
+			<%= link_to "Manter placas", placa_casas_path, :class => "botaomenu" %>
+			<%= link_to "Manter cavaletes", cavaletes_path, :class => "botaomenu" %>
+			<%= link_to "Manter cabos eleitorais", cabo_eleitorals_path, :class => "botaomenu" %>
+			<%= link_to "Manter carros de som", carro_soms_path, :class => "botaomenu" %>
+			<%= link_to "Manter usuários", usuarios_path, :class => "botaomenu" %>
 		</div>
 		<div class="ui-widget-content ui-corner-all content">
 			<%= yield %>

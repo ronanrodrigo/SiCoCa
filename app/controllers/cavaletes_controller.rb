@@ -42,11 +42,11 @@ class CavaletesController < ApplicationController
   # POST /cavaletes.xml
   def create
     @cavalete = Cavalete.new(params[:cavalete])
-    @placa = @cavalete.build_placa(params[:placa])
+    @cavalete.placa = Placa.new(params[:placa])
     
     respond_to do |format|
       if @cavalete.save
-        format.html { redirect_to(@cavalete, :notice => 'Cavalete was successfully created.') }
+        format.html { redirect_to(@cavalete, :notice => ' - Cavalete cadastrado com sucesso.') }
         format.xml  { render :xml => @cavalete, :status => :created, :location => @cavalete }
       else
         format.html { render :action => "new" }
@@ -59,10 +59,11 @@ class CavaletesController < ApplicationController
   # PUT /cavaletes/1.xml
   def update
     @cavalete = Cavalete.find(params[:id])
-
+    @cavalete.placa.update_attributes(params[:placa])
+    
     respond_to do |format|
       if @cavalete.update_attributes(params[:cavalete])
-        format.html { redirect_to(@cavalete, :notice => 'Cavalete was successfully updated.') }
+        format.html { redirect_to(@cavalete, :notice => ' - Dados atualizados com sucesso.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

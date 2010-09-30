@@ -44,7 +44,7 @@ class PessoasController < ApplicationController
 
     respond_to do |format|
       if @pessoa.save
-        format.html { redirect_to(@pessoa, :notice => 'Pessoa was successfully created.') }
+        format.html { redirect_to(@pessoa, :notice => ' - Pessoa cadastrada com sucesso.') }
         format.xml  { render :xml => @pessoa, :status => :created, :location => @pessoa }
       else
         format.html { render :action => "new" }
@@ -60,7 +60,7 @@ class PessoasController < ApplicationController
 
     respond_to do |format|
       if @pessoa.update_attributes(params[:pessoa])
-        format.html { redirect_to(@pessoa, :notice => 'Pessoa was successfully updated.') }
+        format.html { redirect_to(@pessoa, :notice => ' - Dados atualizados com sucesso.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

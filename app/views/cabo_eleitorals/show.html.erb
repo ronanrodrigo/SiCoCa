@@ -1,23 +1,27 @@
 <h1>Cabo eleitoral <%= @cabo_eleitoral.id %> <b id="notice"><%= notice %></b></h1>
-<p>
-  <b class="show">Tipo ajuda:</b>
-  <%= @cabo_eleitoral.tipo_ajuda %>
-</p>
-
-<p>
-  <b class="show">Valor ajuda:</b>
-  <%= @cabo_eleitoral.valor_ajuda %>
-</p>
-
-<p>
-  <b class="show">Nome:</b>
-  <%= @cabo_eleitoral.pessoa.nome %>
-</p>
-<p>
-  <b class="show">CPF:</b>
-  <%= @cabo_eleitoral.pessoa.cpf %>
-</p>
-
+	<fieldset class="ui-widget-content ui-corner-all fieldset">
+		<legend>Dados da ajuda</legend>
+		<p class="show">
+			<b class="show">Tipo ajuda:</b>
+			<%= @cabo_eleitoral.tipo_ajuda %>
+		</p>
+		<p class="show">
+			<b class="show">Valor ajuda:</b>
+			<%= @cabo_eleitoral.valor_ajuda %>
+		</p>
+	</fieldset>
+	<fieldset class="ui-widget-content ui-corner-all fieldset">
+		<legend>Dados do cabo eleitoral</legend>
+		<p class="show">
+			<b class="show">Nome:</b>
+			<%= @cabo_eleitoral.pessoa.nome %>
+		</p>
+		<p class="show">
+			<b class="show">CPF:</b>
+			<%= @cabo_eleitoral.pessoa.cpf %>
+		</p>
+	</fieldset>
+	
 <div class="botoes_rodape">
 <%= link_to 'Editar', edit_cabo_eleitoral_path(@cabo_eleitoral) %> |
 <%= link_to 'Voltar', cabo_eleitorals_path %>

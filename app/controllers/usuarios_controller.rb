@@ -43,11 +43,11 @@ class UsuariosController < ApplicationController
   # POST /usuarios.xml
   def create
     @usuario = Usuario.new(params[:usuario])
-    @pessoa = @usuario.build_pessoa(params[:pessoa])
+    @usuario.pessoa = Pessoa.new(params[:pessoa])    
 
     respond_to do |format|
       if @usuario.save
-        format.html { redirect_to(@usuario, :notice => 'Usuario was successfully created.') }
+        format.html { redirect_to(@usuario, :notice => ' - Usuário cadastrado com sucesso.') }
         format.xml  { render :xml => @usuario, :status => :created, :location => @usuario }
       else
         format.html { render :action => "new" }
@@ -60,10 +60,11 @@ class UsuariosController < ApplicationController
   # PUT /usuarios/1.xml
   def update
     @usuario = Usuario.find(params[:id])
+    @usuario.pessoa.update_attributes(params[:pessoa])  
 
     respond_to do |format|
       if @usuario.update_attributes(params[:usuario])
-        format.html { redirect_to(@usuario, :notice => 'Usuario was successfully updated.') }
+        format.html { redirect_to(@usuario, :notice => ' - Dados atualizados com sucesso.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

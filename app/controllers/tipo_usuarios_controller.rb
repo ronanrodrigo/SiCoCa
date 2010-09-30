@@ -44,7 +44,7 @@ class TipoUsuariosController < ApplicationController
 
     respond_to do |format|
       if @tipo_usuario.save
-        format.html { redirect_to(@tipo_usuario, :notice => 'Tipo usuario was successfully created.') }
+        format.html { redirect_to(@tipo_usuario, :notice => ' - Tipo de usuário cadastrado com sucesso.') }
         format.xml  { render :xml => @tipo_usuario, :status => :created, :location => @tipo_usuario }
       else
         format.html { render :action => "new" }
@@ -60,7 +60,7 @@ class TipoUsuariosController < ApplicationController
 
     respond_to do |format|
       if @tipo_usuario.update_attributes(params[:tipo_usuario])
-        format.html { redirect_to(@tipo_usuario, :notice => 'Tipo usuario was successfully updated.') }
+        format.html { redirect_to(@tipo_usuario, :notice => ' - Dados atualizados com sucesso.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

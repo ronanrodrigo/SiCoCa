@@ -10,7 +10,7 @@ body {
 a.toolbarimg{
 	padding: 0px 0px 0px 0px;
 	margin-left: 5px;
-	width: 796px;
+	width: 798px;
 	height: 100px;
 }
 img.header{
@@ -24,11 +24,20 @@ div.main{
 	padding: 10px;
 	text-align:left; /* "remédio" para o hack do IE */
 }
+a.botaomenu{
+	padding-left: 0.4em;
+}
+div.barrabotoes{
+	padding-left: 6px;
+	padding-right: 5px;
+	text-align:center; /* "remédio" para o hack do IE */
+}
 div.field{
 	margin: 10px;
 }
 div.actions{
 	margin-top: 10px;
+	color: #ADADAD;
 }
 tr{
 	text-align: center;
@@ -75,6 +84,7 @@ h1 {
 }
 div.botoes_rodape{
 	padding-top: 10px;
+	color: #ADADAD;
 }
 td.botoes{
 	width: 10px;
@@ -88,5 +98,6 @@ fieldset{
 	margin-bottom: 5px;
 }
 #notice{
+	font-size: 14px;
 	color: #008000;
 }

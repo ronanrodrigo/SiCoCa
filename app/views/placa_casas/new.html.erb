@@ -23,7 +23,7 @@
 </script>
 
 
-<%= form_for :placa_casa, :url => { :action => :create } do |f| %>
+<%= form_for @placa_casa, :url => { :action => :create } do |f| %>
 
   <% if @placa_casa.errors.any? %>
     <div id="error_explanation">
@@ -76,8 +76,7 @@
 		<% end %>
 	</fieldset>
 	<div class="actions">
-	  <%= f.submit 'Salvar' %>
+	  <%= f.submit 'Salvar' %> |
+      <%= link_to 'Voltar', placa_casas_path %>
+	</div>
 <% end %>
-
-
-<%= link_to 'Voltar', placa_casas_path %>

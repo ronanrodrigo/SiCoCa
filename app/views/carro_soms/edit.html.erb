@@ -1,6 +1,68 @@
 <h1>Editar carro som</h1>
 
-<%= render 'form' %>
+<%= javascript_include_tag 'jquery-1.4.2.min' %>
+<%= javascript_include_tag 'jquery-ui-1.8.5.custom.min' %>
+<%= stylesheet_link_tag 'jquery-ui-1.8.5.custom' %>
 
-<%= link_to 'Visualizar', @carro_som %> |
-<%= link_to 'Voltar', carro_soms_path %>
+<script type="text/javascript"> 
+	$(document).ready(function() {
+			nomes = "<%= @pessoas %>";
+			nomes = nomes.substring(0,nomes.length-1);
+			nomesArray = nomes.split(";");
+			
+			$("#nomepessoa").autocomplete({
+				source: nomesArray
+			});
+	});
+
+	function digitacpf() {
+		nomecpf = $("#nomepessoa").val().split(" - ");
+		$("#nomepessoa").val(nomecpf[0]);
+		$("#cpfpessoa").val(nomecpf[1]);
+	}
+</script>
+
+
+<%= form_for(@carro_som) do |f| %>
+
+  <% if @carro_som.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@carro_som.errors.count, "error") %> prohibited this carro_som from being saved:</h2>
+
+      <ul>
+      <% @carro_som.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+	<fieldset class="ui-widget-content ui-corner-all fieldset">
+	    <legend>Dados do carro</legend>
+		<div class="field">
+		  <%= f.label "Placa:" %>
+		  <%= f.text_field :placa_carro %>
+		</div>
+		<div class="field">
+		  <%= f.label "Modelo: " %>
+		  <%= f.text_field :modelo_carro %>
+		</div>
+	</fieldset>
+	<fieldset class="ui-widget-content ui-corner-all fieldset">
+	    <legend>Dados do dono do carro</legend>	
+		<%= fields_for @carro_som.pessoa do |pessoa| %>
+			<div class="field">
+			  <%= pessoa.label "Nome: " %>
+			  <%= pessoa.text_field :nome, :id => "nomepessoa", :onblur => "{digitacpf()}" %>
+			</div>
+			<div class="field">
+			  <%= pessoa.label :pessoa, "CPF:" %>
+			  <%= pessoa.text_field :cpf, :id => "cpfpessoa" %>
+			</div>
+		<% end %>	
+		</fieldset>
+  <div class="actions">
+    <%= f.submit 'Salvar' %> |
+ 	<%= link_to 'Visualizar', @carro_som %> |
+	<%= link_to 'Voltar', carro_soms_path %>
+  </div>
+<% end %>

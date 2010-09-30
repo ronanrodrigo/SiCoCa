@@ -1,39 +1,40 @@
 <h1>Placa residencial <%= @placa_casa.id %> <b id="notice"><%= notice %></b></h1>
 
-<p class="show">
-  <b class="show">Endereço:</b>
-  <%= @placa_casa.placa.endereco %>
-</p>
+<fieldset class="ui-widget-content ui-corner-all fieldset">
+    <legend>Dados da placa</legend>
+	<p class="show">
+	  <b class="show">Endereço:</b>
+	  <%= @placa_casa.placa.endereco %>
+	</p>
+	<p class="show">
+	  <b class="show">Cidade:</b>
+	  <%= @placa_casa.placa.cidade %>
+	</p>
+	<p class="show">
+	  <b class="show">Tamanho:</b>
+	  <%= @placa_casa.placa.tamanho %>
+	</p>
+	<p class="show">
+	  <b class="show">Descrição:</b>
+	  <%= @placa_casa.placa.tamanho %>
+	</p>
+	<p class="show">
+	  <b class="show">Autorizada:</b>
+	  <%= @placa_casa.autoriza %>
+	</p>
+</fieldset>
 
-<p class="show">
-  <b class="show">Cidade:</b>
-  <%= @placa_casa.placa.cidade %>
-</p>
-
-<p class="show">
-  <b class="show">Tamanho:</b>
-  <%= @placa_casa.placa.tamanho %>
-</p>
-
-<p class="show">
-  <b class="show">Descrição:</b>
-  <%= @placa_casa.placa.tamanho %>
-</p>
-
-<p class="show">
-  <b class="show">Autorizada:</b>
-  <%= @placa_casa.autoriza %>
-</p>
-
-<p class="show">
-  <b class="show">Nome:</b>
-  <%= @placa_casa.pessoa.nome %>
-</p>
-
-<p class="show">
-  <b class="show">Nome:</b>
-  <%= @placa_casa.pessoa.cpf %>
-</p>
+<fieldset class="ui-widget-content ui-corner-all fieldset">
+    <legend>Dados de quem autorizou colocar a placa</legend>
+	<p class="show">
+	  <b class="show">Nome:</b>
+	  <%= @placa_casa.pessoa.nome %>
+	</p>
+	<p class="show">
+	  <b class="show">CPF:</b>
+	  <%= @placa_casa.pessoa.cpf %>
+	</p>
+</fieldset>
 
 <div class="botoes_rodape">
 <%= link_to 'Editar', edit_placa_casa_path(@placa_casa) %> |

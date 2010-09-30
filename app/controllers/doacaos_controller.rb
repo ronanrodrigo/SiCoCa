@@ -43,11 +43,11 @@ class DoacaosController < ApplicationController
   # POST /doacaos.xml
   def create
     @doacao = Doacao.new(params[:doacao])
-    @pessoa = @doacao.build_pessoa(params[:pessoa])
+    @doacao.pessoa = Pessoa.new(params[:pessoa])    
     
     respond_to do |format|
       if @doacao.save
-        format.html { redirect_to(@doacao, :notice => 'Doação criada com sucesso!') }
+        format.html { redirect_to(@doacao, :notice => ' - Doação cadastrada com sucesso.') }
         format.xml  { render :xml => @doacao, :status => :created, :location => @doacao }
       else
         format.html { render :action => "new" }
@@ -60,10 +60,11 @@ class DoacaosController < ApplicationController
   # PUT /doacaos/1.xml
   def update
     @doacao = Doacao.find(params[:id])
-
+    @doacao.pessoa.update_attributes(params[:pessoa])  
+    
     respond_to do |format|
       if @doacao.update_attributes(params[:doacao])
-        format.html { redirect_to(@doacao, :notice => 'Doacao was successfully updated.') }
+        format.html { redirect_to(@doacao, :notice => ' - Dados atualizados com sucesso.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

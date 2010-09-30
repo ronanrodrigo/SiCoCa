@@ -50,7 +50,7 @@ class PlacaCasasController < ApplicationController
     
     respond_to do |format|
       if @placa_casa.save
-        format.html { redirect_to(@placa_casa, :notice => '- Placa casa was successfully created.') }
+        format.html { redirect_to(@placa_casa, :notice => ' - Placa cadastrada com sucesso.') }
         format.xml  { render :xml => @placa_casa, :status => :created, :location => @placa_casa }
       else
         format.html { render :action => "new" }
@@ -68,7 +68,7 @@ class PlacaCasasController < ApplicationController
     
     respond_to do |format|
       if @placa_casa.update_attributes(params[:placa_casa])
-        format.html { redirect_to(@placa_casa, :notice => 'Placa casa was successfully updated.') }
+        format.html { redirect_to(@placa_casa, :notice => ' - Dados atualizados com sucesso.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

@@ -44,7 +44,7 @@ class PlacasController < ApplicationController
 
     respond_to do |format|
       if @placa.save
-        format.html { redirect_to(@placa, :notice => 'Placa was successfully created.') }
+        format.html { redirect_to(@placa, :notice => ' - Cabo eleitoral cadastrada com sucesso.') }
         format.xml  { render :xml => @placa, :status => :created, :location => @placa }
       else
         format.html { render :action => "new" }
@@ -60,7 +60,7 @@ class PlacasController < ApplicationController
 
     respond_to do |format|
       if @placa.update_attributes(params[:placa])
-        format.html { redirect_to(@placa, :notice => 'Placa was successfully updated.') }
+        format.html { redirect_to(@placa, :notice => ' - Dados atualizados com sucesso.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

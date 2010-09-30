@@ -1,24 +1,26 @@
 <h1>Doação <%= @doacao.id %> <b id="notice"><%= notice %></b></h1>
-
-<p>
-  <b class="show">Valor da doação:</b>
-  <%= @doacao.valor_doaco %>
-</p>
-
-<p>
-  <b class="show">Data da doação:</b>
-  <%= @doacao.data_doacao %>
-</p>
-
-<p>
-  <b class="show">Doador:</b>
-  <%= @doacao.pessoa.nome %>
-</p>
-
-<p>
-  <b class="show">CPF:</b>
-  <%= @doacao.pessoa.cpf %>
-</p>
+	<fieldset class="ui-widget-content ui-corner-all fieldset">
+	<legend>Dados da doação</legend>
+	<p class="show">
+		<b class="show">Valor da doação:</b>
+		<%= @doacao.valor_doaco %>
+	</p>
+	<p class="show">
+		<b class="show">Data da doação:</b>
+		<%= @doacao.data_doacao %>
+	</p>
+	</fieldset>
+	<fieldset class="ui-widget-content ui-corner-all fieldset">
+		<legend>Dados do doador</legend>
+		<p class="show">
+			<b class="show">Doador:</b>
+			<%= @doacao.pessoa.nome %>
+		</p>
+		<p class="show">
+			<b class="show">CPF:</b>
+			<%= @doacao.pessoa.cpf %>
+		</p>
+	</fieldset>
 
 <div class="botoes_rodape">
 <%= link_to 'Editar', edit_doacao_path(@doacao) %> |

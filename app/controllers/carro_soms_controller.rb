@@ -26,6 +26,7 @@ class CarroSomsController < ApplicationController
   def new
     @carro_som = CarroSom.new
     @pessoa = Pessoa.new
+
     @pessoas = Pessoa.find(:all).map { |u| [u.nome + ' - ' + u.cpf + ';'] }
     
     respond_to do |format|
@@ -43,11 +44,11 @@ class CarroSomsController < ApplicationController
   # POST /carro_soms.xml
   def create
     @carro_som = CarroSom.new(params[:carro_som])
-    @pessoa = @carro_som.build_pessoa(params[:pessoa])
+    @carro_som.pessoa = Pessoa.new(params[:pessoa])    
 
     respond_to do |format|
       if @carro_som.save
-        format.html { redirect_to(@carro_som, :notice => 'Carro som was successfully created.') }
+        format.html { redirect_to(@carro_som, :notice => ' - Carro de som cadastrado com sucesso.') }
         format.xml  { render :xml => @carro_som, :status => :created, :location => @carro_som }
       else
         format.html { render :action => "new" }
@@ -60,10 +61,11 @@ class CarroSomsController < ApplicationController
   # PUT /carro_soms/1.xml
   def update
     @carro_som = CarroSom.find(params[:id])
+    @carro_som.pessoa.update_attributes(params[:pessoa])  
 
     respond_to do |format|
       if @carro_som.update_attributes(params[:carro_som])
-        format.html { redirect_to(@carro_som, :notice => 'Carro som was successfully updated.') }
+        format.html { redirect_to(@carro_som, :notice => ' - Dados atualizados com sucesso.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

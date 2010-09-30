@@ -1,6 +1,46 @@
-<h1>Editing cavalete</h1>
+<h1>Editar cavalete</h1>
 
-<%= render 'form' %>
+<%= form_for(@cavalete) do |f| %>
 
-<%= link_to 'Visualizar', @cavalete %> |
-<%= link_to 'Voltar', cavaletes_path %>
+  <% if @cavalete.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cavalete.errors.count, "error") %> prohibited this cavalete from being saved:</h2>
+
+      <ul>
+      <% @cavalete.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+	<fieldset class="ui-widget-content ui-corner-all fieldset">
+	    <legend>Dados do cavalete</legend>
+		<%= fields_for @cavalete.placa do |placa| %>
+			<div class="field">
+			  <%= placa.label "Endereço: " %>
+			  <%= placa.text_field :endereco %>
+			</div>
+			<div class="field">
+			  <%= placa.label "Cidade: " %>
+			  <%= placa.text_field :cidade %>
+			</div>
+			<div class="field">
+			  <%= placa.label "Tamanho" %>
+			  <%= placa.text_field :tamanho %>
+			</div>
+			<div class="field">
+			  <%= placa.label "Descrição: " %>
+			  <%= placa.text_field :descricao %>
+			</div>
+			<div class="field">
+			  <%= f.label "Local irregular: " %>
+			  <%= f.check_box :irregular %>
+			</div>
+		<% end %>
+	</fieldset>
+
+  <div class="actions">
+    <%= f.submit 'Salvar' %> | 
+	<%= link_to 'Visualizar', @cavalete %> |
+	<%= link_to 'Voltar', cavaletes_path %>
+<% end %>

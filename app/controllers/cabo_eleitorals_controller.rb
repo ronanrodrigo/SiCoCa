@@ -43,15 +43,11 @@ class CaboEleitoralsController < ApplicationController
   # POST /cabo_eleitorals.xml
   def create
     @cabo_eleitoral = CaboEleitoral.new(params[:cabo_eleitoral])
-/    @pessoaexiste = Pessoa.find_or_initialize_by_name(:pessoa)
-    if @pessoa.new_record?
-      @pessoa = @cabo_eleitoral.build_pessoa(params[:pessoa])
-    end/
-    @pessoa = @cabo_eleitoral.build_pessoa(params[:pessoa])
+    @cabo_eleitoral.pessoa = Pessoa.new(params[:pessoa])    
     
     respond_to do |format|
       if @cabo_eleitoral.save
-        format.html { redirect_to(@cabo_eleitoral, :notice => 'Cabo eleitoral was successfully created.') }
+        format.html { redirect_to(@cabo_eleitoral, :notice => ' - Cabo eleitoral cadastrado com sucesso.') }
         format.xml  { render :xml => @cabo_eleitoral, :status => :created, :location => @cabo_eleitoral }
       else
         format.html { render :action => "new" }
@@ -64,10 +60,11 @@ class CaboEleitoralsController < ApplicationController
   # PUT /cabo_eleitorals/1.xml
   def update
     @cabo_eleitoral = CaboEleitoral.find(params[:id])
+    @cabo_eleitoral.pessoa.update_attributes(params[:pessoa])  
 
     respond_to do |format|
       if @cabo_eleitoral.update_attributes(params[:cabo_eleitoral])
-        format.html { redirect_to(@cabo_eleitoral, :notice => 'Cabo eleitoral was successfully updated.') }
+        format.html { redirect_to(@cabo_eleitoral, :notice => ' - Dados atualizados com sucesso.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

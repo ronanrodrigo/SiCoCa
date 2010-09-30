@@ -76,8 +76,8 @@
 		<% end %>
 	</fieldset>
 	<div class="actions">
-	  <%= f.submit 'Salvar' %>
+	  <%= f.submit 'Salvar' %> |
+   	  <%= link_to 'Visualizar', @placa_casa %> | 
+	  <%= link_to 'Voltar', placa_casas_path %>
+	</div>
 <% end %>
-
-
-<%= link_to 'Visualizar', @placa_casa %> | <%= link_to 'Voltar', placa_casas_path %>
