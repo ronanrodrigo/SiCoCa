@@ -1,0 +1,17 @@
+rails generate scaffold placa endereco:string cidade:string tamanho:string descricao:string
+
+rails generate scaffold placa_casa autoriza:boolean placa:references
+
+rails generate scaffold cavalete irregular:boolean placa:references
+
+rails generate scaffold pessoa nome:string cpf:string
+
+rails generate scaffold tipo_usuario descricao:string
+
+rails generate scaffold usuario email:string senha:string tipo_usuario:references pessoa:references
+
+rails generate scaffold doacao valor_doaco:float data_doacao:date pessoa:references
+
+rails generate scaffold carro_som placa_carro:string modelo_carro:string pessoa:references
+
+rails generate scaffold cabo_eleitoral tipo_ajuda:string valor_ajuda:float pessoa:references
