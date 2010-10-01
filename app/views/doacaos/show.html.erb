@@ -1,29 +1,31 @@
 <h1>Doação <%= @doacao.id %> <b id="notice"><%= notice %></b></h1>
-	<fieldset class="ui-widget-content ui-corner-all fieldset">
-	<legend>Dados da doação</legend>
+<fieldset class="ui-widget-content ui-corner-all fieldset">
+<legend>Dados da doação</legend>
+<p class="show">
+	<b class="show">Valor da doação:</b>
+	<%= @doacao.valor_doaco %>
+</p>
+<p class="show">
+	<b class="show">Data da doação:</b>
+	<%= @doacao.data_doacao %>
+</p>
+</fieldset>
+<fieldset class="ui-widget-content ui-corner-all fieldset">
+	<legend>Dados do doador</legend>
 	<p class="show">
-		<b class="show">Valor da doação:</b>
-		<%= @doacao.valor_doaco %>
+		<b class="show">Doador:</b>
+		<%= @doacao.pessoa.nome %>
 	</p>
 	<p class="show">
-		<b class="show">Data da doação:</b>
-		<%= @doacao.data_doacao %>
+		<b class="show">CPF:</b>
+		<%= @doacao.pessoa.cpf %>
 	</p>
-	</fieldset>
-	<fieldset class="ui-widget-content ui-corner-all fieldset">
-		<legend>Dados do doador</legend>
-		<p class="show">
-			<b class="show">Doador:</b>
-			<%= @doacao.pessoa.nome %>
-		</p>
-		<p class="show">
-			<b class="show">CPF:</b>
-			<%= @doacao.pessoa.cpf %>
-		</p>
-	</fieldset>
+</fieldset>
+	
+<p id="assinatura">Assinatura: __________________________________________</p>
 
 <div class="botoes_rodape" id="botoes_rodape">
 	<%= link_to 'Editar', edit_doacao_path(@doacao) %> |
 	<%= link_to 'Voltar', doacaos_path %> |
-	<%= link_to "Gerar relatório", doacao_path(@doacao, :format => "pdf") %>
+	<%= link_to "Gerar formulário", doacao_path(@doacao, :format => "pdf") %>
 </div>

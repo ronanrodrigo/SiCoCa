@@ -18,7 +18,7 @@
 	  <b class="show">Descrição:</b>
 	  <%= @placa_casa.placa.tamanho %>
 	</p>
-	<p class="show">
+	<p class="show" id="autorizada">
 	  <b class="show">Autorizada:</b>
 	  <%= @placa_casa.autoriza %>
 	</p>
@@ -36,8 +36,10 @@
 	</p>
 </fieldset>
 
+<p id="assinatura">Assinatura: __________________________________________</p>
+
 <div class="botoes_rodape" id="botoes_rodape">
 	<%= link_to 'Editar', edit_placa_casa_path(@placa_casa) %> |
 	<%= link_to 'Voltar', placa_casas_path %> | 
-	<%= link_to "Gerar relatório", placa_casa_path(@placa_casa, :format => "pdf") %>
+	<%= link_to "Gerar autorização", placa_casa_path(@placa_casa, :format => "pdf") %>
 </div>
