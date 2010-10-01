@@ -26,4 +26,5 @@
 <div class="botoes_rodape" id="botoes_rodape">
 	<%= link_to 'Cadastrar doação', new_doacao_path %> |
 	<%= link_to "Gerar relatório", doacaos_path(@doacao, :format => "pdf") %>
+	<%= will_paginate @doacaos %>
 </div>

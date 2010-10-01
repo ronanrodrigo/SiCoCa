@@ -3,7 +3,7 @@ class PlacasController < ApplicationController
   # GET /placas.xml
   def index
     @placas = Placa.all
-
+    @placas = @placas.paginate :page => params[:page], :order => 'created_at DESC', :per_page => 10
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @placas }

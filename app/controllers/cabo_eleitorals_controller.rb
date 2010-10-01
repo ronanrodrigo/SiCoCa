@@ -3,7 +3,8 @@ class CaboEleitoralsController < ApplicationController
   # GET /cabo_eleitorals.xml
   def index
     @cabo_eleitorals = CaboEleitoral.all
-
+    @cabo_eleitorals = @cabo_eleitorals.paginate :page => params[:page], :order => 'created_at DESC', :per_page => 10
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @cabo_eleitorals }

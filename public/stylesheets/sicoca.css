@@ -141,3 +141,12 @@ img.sicocaimg{
 #assinatura{
 	display: none;
 }
+div.pagination{
+	float: right;
+}
+span.disabled{
+	display: none;
+}
+span.current{
+  font-weight:bold;		
+}

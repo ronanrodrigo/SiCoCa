@@ -27,4 +27,5 @@
 <div class="botoes_rodape" id="botoes_rodape">
 	<%= link_to 'Cadastrar carro de som', new_carro_som_path %> |
 	<%= link_to "Gerar relatório", carro_soms_path(@carro_som, :format => "pdf") %>
+	<%= will_paginate @doacaos %>
 </div>
