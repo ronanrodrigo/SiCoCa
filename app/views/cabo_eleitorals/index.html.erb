@@ -5,16 +5,16 @@
     <th>Tipo de ajuda</th>
     <th>Valor de ajuda</th>
     <th>Cabo eleitoral</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th class="botoes"></th>
+    <th class="botoes"></th>
+    <th class="botoes"></th>
   </tr>
 
 <% @cabo_eleitorals.each do |cabo_eleitoral| %>
   <tr>
     <td><%= cabo_eleitoral.tipo_ajuda %></td>
     <td><%= cabo_eleitoral.valor_ajuda %></td>
-    <td><%= cabo_eleitoral.pessoa.nome + " - " + cabo_eleitoral.pessoa.cpf %></td>
+    <td><%= cabo_eleitoral.pessoa.nome %></td>
     <td class="botoes"><%= link_to 'Visualizar', cabo_eleitoral %></td>
     <td class="botoes"><%= link_to 'Editar', edit_cabo_eleitoral_path(cabo_eleitoral) %></td>
     <td class="botoes"><%= link_to 'Remover', cabo_eleitoral, :confirm => 'Are you sure?', :method => :delete %></td>

@@ -2,18 +2,18 @@
 
 <table>
   <tr>
-    <th>Autorizada</th>
+    <th id="autorizada">Autorizada</th>
     <th>Cidade</th>
     <th>Endereço</th>
 	<th>Autorizador</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th class="botoes"></th>
+    <th class="botoes"></th>
+    <th class="botoes"></th>
   </tr>
 
 <% @placa_casas.each do |placa_casa| %>
   <tr>
-    <td><%= placa_casa.autoriza %></td>
+    <td id="autorizada"><%= placa_casa.autoriza %></td>
     <td><%= placa_casa.placa.cidade %></td>
     <td><%= placa_casa.placa.endereco %></td>
     <td><%= placa_casa.pessoa.nome %></td>
