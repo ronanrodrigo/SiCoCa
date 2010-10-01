@@ -23,5 +23,7 @@
 </table>
 
 <br />
-
-<%= link_to 'Cadastrar cabo eleitoral', new_cabo_eleitoral_path %>
+<div class="botoes_rodape" id="botoes_rodape">
+	<%= link_to 'Cadastrar cabo eleitoral', new_cabo_eleitoral_path %> |
+	<%= link_to "Gerar relatório", cabo_eleitorals_path(@cabo_eleitoral, :format => "pdf") %>
+</div>

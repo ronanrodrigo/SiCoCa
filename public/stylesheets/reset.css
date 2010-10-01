@@ -15,3 +15,11 @@ h1 {
 table {
 	width: 788px;
 }
+img{
+	border: none;
+	background: transparent;
+}
+ul {
+	list-style: none;
+	border: 0;
+}

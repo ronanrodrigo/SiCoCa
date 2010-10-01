@@ -5,6 +5,7 @@
   <%= stylesheet_link_tag 'reset' %>
   <%= stylesheet_link_tag 'sicoca' %>
   <%= stylesheet_link_tag 'jquery-ui-1.8.5.custom' %>
+  <%= stylesheet_link_tag 'imprimir', :media => "all" %>
   <%= javascript_include_tag :defaults %>
   <%= javascript_include_tag 'jquery-1.4.2.min' %>
   <%= javascript_include_tag 'jquery-ui-1.8.5.custom.min' %>
@@ -20,10 +21,10 @@
 </script>
 <body>
 	<div class="main">
-		<a class="toolbarimg" href="http://localhost:3000">
+		<a class="toolbarimg naoimprimir" href="http://localhost:3000" id="imgtopo">
 			<img class="header" src="../../../images/assis.png">
 		</a>
-		<div class="ui-widget-content ui-corner-all toolbar ui-widget-header barrabotoes">
+		<div class="ui-widget-content ui-corner-all toolbar ui-widget-header barrabotoes" id="menutopo">
 			<%= link_to "Manter bônus", doacaos_path, :class => "botaomenu" %>
 			<%= link_to "Manter placas", placa_casas_path, :class => "botaomenu" %>
 			<%= link_to "Manter cavaletes", cavaletes_path, :class => "botaomenu" %>

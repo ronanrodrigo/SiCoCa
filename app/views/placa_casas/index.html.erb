@@ -26,4 +26,7 @@
 
 <br />
 
-<%= link_to 'Cadastrar placa', new_placa_casa_path %>
+<div class="botoes_rodape" id="botoes_rodape">
+	<%= link_to 'Cadastrar placa', new_placa_casa_path %> |
+	<%= link_to "Gerar relatório", placa_casas_path(@placa_casa, :format => "pdf") %>
+</div>

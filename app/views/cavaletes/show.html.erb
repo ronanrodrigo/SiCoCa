@@ -27,7 +27,8 @@
 	</p>
 </fieldset>
 
-<div class="botoes_rodape">
-<%= link_to 'Editar', edit_cavalete_path(@cavalete) %> |
-<%= link_to 'Voltar', cavaletes_path %>
+<div class="botoes_rodape" id="botoes_rodape">
+	<%= link_to 'Editar', edit_cavalete_path(@cavalete) %> |
+	<%= link_to 'Voltar', cavaletes_path %> |
+	<%= link_to "Gerar relatório", cavalete_path(@cavalete, :format => "pdf") %>
 </div>

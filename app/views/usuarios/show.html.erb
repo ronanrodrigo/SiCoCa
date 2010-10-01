@@ -25,7 +25,8 @@
 	</p>
 </fieldset>
 
-<div class="botoes_rodape">
-<%= link_to 'Editar', edit_usuario_path(@usuario) %> |
-<%= link_to 'Voltar', usuarios_path %>
+<div class="botoes_rodape" id="botoes_rodape">
+	<%= link_to 'Editar', edit_usuario_path(@usuario) %> |
+	<%= link_to 'Voltar', usuarios_path %> |
+	<%= link_to "Gerar relatório", usuario_path(@usuario, :format => "pdf") %>
 </div>

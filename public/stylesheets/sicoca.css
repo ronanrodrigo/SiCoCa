@@ -4,6 +4,11 @@ div.content, div.toolbar{
 	margin: 4px;
 	width: 788px;
 }
+div.start{
+	padding: 4px;
+	margin-right: -2px;
+	margin-top: 4px;
+}
 body {
 	text-align:center; /* hack para o IE */	
 }
@@ -83,7 +88,6 @@ h1 {
 	border-radius: 4px;
 }
 div.botoes_rodape{
-	padding-top: 10px;
 	color: #ADADAD;
 }
 td.botoes{
@@ -109,12 +113,28 @@ fieldset{
 	-webkit-border-radius: 4px;
 	border-radius: 4px; 
 	padding: 5px;
-	margin-bottom: 5px;
+	margin-bottom: 4px;
 }
-asda{
-	display: block; 
-	text-indent: -99999px; 
-	overflow: hidden; 
+li, h2{
+	padding-bottom: 2px;
+}
+div.iconeerro {
 	background-repeat: no-repeat; 
 	background-position: 0 -144px;
+	width: 16px; 
+	height: 16px; 
+	background-image: url(images/ui-icons_cd0a0a_256x240.png);
+	float: left;
+	margin-right: 2px;
+	margin-top: -1px;
+	border: 0px;
+}
+h2{
+	font-size: 14px;
+	text-align: center;
+}
+img.sicocaimg{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 245px;
 }

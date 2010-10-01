@@ -36,7 +36,8 @@
 	</p>
 </fieldset>
 
-<div class="botoes_rodape">
-<%= link_to 'Editar', edit_placa_casa_path(@placa_casa) %> |
-<%= link_to 'Voltar', placa_casas_path %>
+<div class="botoes_rodape" id="botoes_rodape">
+	<%= link_to 'Editar', edit_placa_casa_path(@placa_casa) %> |
+	<%= link_to 'Voltar', placa_casas_path %> | 
+	<%= link_to "Gerar relatório", placa_casa_path(@placa_casa, :format => "pdf") %>
 </div>

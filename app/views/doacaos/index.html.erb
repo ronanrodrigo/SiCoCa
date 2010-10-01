@@ -5,23 +5,25 @@
     <th>Valor doação</th>
     <th>Data doação</th>
     <th>Doador</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th id="tablebotao"></th>
+    <th id="tablebotao"></th>
+    <th id="tablebotao"></th>
   </tr>
 
 <% @doacaos.each do |doacao| %>
   <tr>
     <td width="120px"><%= doacao.valor_doaco %></td>
     <td width="120px"><%= doacao.data_doacao %></td>
-    <td><%= doacao.pessoa.nome %> - <%= doacao.pessoa.cpf %> </td>
-    <td class="botoes"><%= link_to 'Visualizar', doacao %></td>
-    <td class="botoes"><%= link_to 'Editar', edit_doacao_path(doacao) %></td>
-    <td class="botoes"><%= link_to 'Remover', doacao, :confirm => 'Você tem certeza?', :method => :delete %></td>
+    <td><%= doacao.pessoa.nome %></td>
+    <td class="botoes" id="tablebotao"><%= link_to 'Visualizar', doacao %></td>
+    <td class="botoes" id="tablebotao"><%= link_to 'Editar', edit_doacao_path(doacao) %></td>
+    <td class="botoes" id="tablebotao"><%= link_to 'Remover', doacao, :confirm => 'Você tem certeza?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
-
-<%= link_to 'Cadastrar doação', new_doacao_path %>
+<div class="botoes_rodape" id="botoes_rodape">
+	<%= link_to 'Cadastrar doação', new_doacao_path %> |
+	<%= link_to "Gerar relatório", doacaos_path(@doacao, :format => "pdf") %>
+</div>

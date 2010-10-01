@@ -23,7 +23,8 @@
 		</p>
 	</fieldset>
 	
-<div class="botoes_rodape">
-<%= link_to 'Editar', edit_carro_som_path(@carro_som) %> |
-<%= link_to 'Voltar', carro_soms_path %>
+<div class="botoes_rodape" id="botoes_rodape">
+	<%= link_to 'Editar', edit_carro_som_path(@carro_som) %> |
+	<%= link_to 'Voltar', carro_soms_path %>|
+	<%= link_to "Gerar relatório", carro_som_path(@carro_som, :format => "pdf") %>
 </div>

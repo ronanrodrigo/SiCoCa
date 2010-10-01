@@ -22,7 +22,8 @@
 		</p>
 	</fieldset>
 	
-<div class="botoes_rodape">
-<%= link_to 'Editar', edit_cabo_eleitoral_path(@cabo_eleitoral) %> |
-<%= link_to 'Voltar', cabo_eleitorals_path %>
+<div class="botoes_rodape" id="botoes_rodape">
+	<%= link_to 'Editar', edit_cabo_eleitoral_path(@cabo_eleitoral) %> |
+	<%= link_to 'Voltar', cabo_eleitorals_path %> |
+	<%= link_to "Gerar relatório", cabo_eleitoral_path(@cabo_eleitoral, :format => "pdf") %>
 </div>

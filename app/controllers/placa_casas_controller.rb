@@ -88,4 +88,17 @@ class PlacaCasasController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def filepdf
+    # PDFKit.new takes the HTML and any options for wkhtmltopdf
+    # run `wkhtmltopdf --extended-help` for a full list of options
+    kit = PDFKit.new(html, :page_size => 'Letter')
+    kit.stylesheets << '/path/to/css/file'
+
+    # Git an inline PDF
+    pdf = kit.to_pdf
+
+    # Save the PDF to a file
+    file = kit.to_file('/path/to/save/pdf')
+  end
 end

@@ -24,4 +24,7 @@
 
 <br />
 
-<%= link_to 'Cadastrar cavalete', new_cavalete_path %>
+<div class="botoes_rodape" id="botoes_rodape">
+	<%= link_to 'Cadastrar cavalete', new_cavalete_path %> |
+	<%= link_to "Gerar relatório", cavaletes_path(@cavalete, :format => "pdf") %>
+</div>
