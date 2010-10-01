@@ -27,11 +27,14 @@
 
   <% if @doacao.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@doacao.errors.count, "error") %> prohibited this doacao from being saved:</h2>
-
+      <h2><%= pluralize(@doacao.errors.count, "erro") %> ao tentar salvar este cadastro:</h2>
       <ul>
       <% @doacao.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        <li>
+			<div class="iconeerro"></div>
+			<b>Alerta: </b>
+			<%= msg %>
+		</li>
       <% end %>
       </ul>
     </div>

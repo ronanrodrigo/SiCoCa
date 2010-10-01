@@ -8,7 +8,10 @@
 
       <ul>
       <% @cavalete.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        <li>
+			<div class="iconeerro"></div>
+			<b>Alerta: </b><%= msg %>
+		</li>
       <% end %>
       </ul>
     </div>
