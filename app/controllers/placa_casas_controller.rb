@@ -3,6 +3,7 @@ class PlacaCasasController < ApplicationController
   # GET /placa_casas.xml
   def index
     @placa_casas = PlacaCasa.all
+    @placa_casas = PlacaCasa.search(params[:search])
     @placa_casas = @placa_casas.paginate :page => params[:page], :order => 'created_at DESC', :per_page => 10
     respond_to do |format|
       format.html # index.html.erb

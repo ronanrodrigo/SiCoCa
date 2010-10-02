@@ -1,4 +1,10 @@
-<h1>Carros de som</h1>
+
+<h1>Carros de som<div class="busca">
+	<% form_tag carro_soms_path, :class=> 'busca' , :method => 'get' do%>
+		<%= text_field_tag :search, params[:search], :class => 'txtsalvar' %>
+		<%= submit_tag "Buscar", :name => nil, :class => 'btsalvar' %>
+	<% end %>		
+</div></h1>
 
 <table>
   <tr>

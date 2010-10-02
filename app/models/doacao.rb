@@ -8,8 +8,10 @@ class Doacao < ActiveRecord::Base
   
   def self.search(search)
     if search
-#     find(:all, :conditions => ['', "%#{search}%", "%#{search}%"])
-      find(:all, :include => [ :pessoa ], :conditions => ['pessoas.nome LIKE ? or valor_doaco LIKE ? or data_doacao LIKE ?', "%#{search}%", "%#{search}%", "%#{search}%"])
+      find( :all, 
+            :include => [ :pessoa ], 
+            :conditions => ['pessoas.nome LIKE ? or valor_doaco LIKE ? or data_doacao LIKE ?',
+                            "%#{search}%",       "%#{search}%",        "%#{search}%"])
     else
       find(:all)
     end

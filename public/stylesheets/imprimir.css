@@ -14,7 +14,7 @@
 		page-break-before: always;
 	}
 
-	#pdf_link, #imgtopo, #menutopo, #botoes_rodape,  #tablebotao, a, #autorizada {
+	#pdf_link, #imgtopo, #menutopo, #botoes_rodape,  #tablebotao, a, #autorizada, div.busca, input.btsalvar {
 		display: none;
 	}
 	td, h1{

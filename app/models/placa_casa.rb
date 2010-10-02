@@ -4,4 +4,16 @@ class PlacaCasa < ActiveRecord::Base
   
   accepts_nested_attributes_for :placa
   accepts_nested_attributes_for :pessoa
+  
+  def self.search(search)
+    if search
+      find( :all, 
+            :include => [ :pessoa, :placa ], 
+            :conditions => ['pessoas.nome LIKE ? or placas.endereco LIKE ? or placas.cidade  LIKE ?',
+                            "%#{search}%",          "%#{search}%",           "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
+  
 end

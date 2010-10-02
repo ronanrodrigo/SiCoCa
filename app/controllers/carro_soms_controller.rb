@@ -3,6 +3,7 @@ class CarroSomsController < ApplicationController
   # GET /carro_soms.xml
   def index
     @carro_soms = CarroSom.all
+    @carro_soms = CarroSom.search(params[:search])
     @carro_soms = @carro_soms.paginate :page => params[:page], :order => 'created_at DESC', :per_page => 10
     
     respond_to do |format|
