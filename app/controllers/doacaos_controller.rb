@@ -3,7 +3,7 @@ class DoacaosController < ApplicationController
   # GET /doacaos.xml
   def index
     @doacaos = Doacao.all
-    
+    @doacaos = Doacao.search(params[:search])
     @doacaos = @doacaos.paginate :page => params[:page], :order => 'created_at DESC', :per_page => 10
     
     respond_to do |format|
@@ -11,7 +11,8 @@ class DoacaosController < ApplicationController
       format.xml  { render :xml => @doacaos }
     end
   end
-
+  
+  
   # GET /doacaos/1
   # GET /doacaos/1.xml
   def show
