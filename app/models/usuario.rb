@@ -4,6 +4,6 @@ class Usuario < ActiveRecord::Base
   
   accepts_nested_attributes_for :tipo_usuario
   
-  validates :email, :presence => true, uniqueness => true
+  validates :email, :presence => true
   validates :senha, :presence => true
 end

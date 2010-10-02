@@ -78,7 +78,7 @@ input[type="checkbox"] {
 }
 h1 {
 	margin: 0px 0px 10px 0px; 
-	padding: 5px 0px 5px 0px;
+	padding: 7px 0px 7px 0px;
 	border: 1px solid #aaaaaa; 
 	background: #cccccc url(images/ui-bg_highlight-soft_75_cccccc_1x100.png) 50% 50% repeat-x; 
 	color: #222222; 
@@ -149,4 +149,13 @@ span.disabled{
 }
 span.current{
   font-weight:bold;		
+}
+div.busca{
+	float: right;
+	margin-top: -4px;
+	margin-right: 4px;
+}
+input.btsalvar{
+	height:23px;
+	font-size: 12px;
 }
