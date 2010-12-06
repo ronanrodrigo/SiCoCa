@@ -19,7 +19,7 @@
   <tr>
     <td width="120px"><%= doacao.valor_doaco %></td>
     <td width="120px"><%= doacao.data_doacao %></td>
-    <td><%= doacao.pessoa.nome %></td>
+    <td><%= doacao.pessoa.nome %> - <%= doacao.pessoa.cpf %></td>
     <td class="botoes" id="tablebotao"><%= link_to 'Visualizar', doacao %></td>
     <td class="botoes" id="tablebotao"><%= link_to 'Editar', edit_doacao_path(doacao) %></td>
     <td class="botoes" id="tablebotao"><%= link_to 'Remover', doacao, :confirm => 'Você tem certeza?', :method => :delete %></td>

@@ -29,7 +29,7 @@ class DoacaosController < ApplicationController
   def new
     @doacao = Doacao.new
     @pessoa = Pessoa.new
-    @pessoas = Pessoa.find(:all).map { |u| [u.nome + ' - ' + u.cpf + ';'] }
+    @pessoas = Pessoa.find(:all).map { |u| [u.nome + ' - ' + u.cpf + ';'] }.uniq
     #@pessoas = Pessoa.all
     respond_to do |format|
       format.html # new.html.erb

@@ -23,9 +23,9 @@ img.header{
 	margin-left: -13px;
 }
 div.main{
-	margin-left: 25%;
+	margin-left: 25%px;
 	width: 800px;
-	margin:0 auto;			
+	margin:0 auto;	
 	padding: 10px;
 	text-align:left; /* "remédio" para o hack do IE */
 }

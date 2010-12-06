@@ -27,7 +27,9 @@ class UsuariosController < ApplicationController
   def new
     @usuario = Usuario.new
     @pessoa = Pessoa.new
-    @pessoas = Pessoa.find(:all).map { |u| [u.nome + ' - ' + u.cpf + ';'] }
+    @tipo_usuario = TipoUsuario.new
+    
+    @pessoas = Pessoa.find(:all).map { |u| [u.nome + ' - ' + u.cpf + ';'] }.uniq
     
     respond_to do |format|
       format.html # new.html.erb
@@ -44,7 +46,8 @@ class UsuariosController < ApplicationController
   # POST /usuarios.xml
   def create
     @usuario = Usuario.new(params[:usuario])
-    @usuario.pessoa = Pessoa.new(params[:pessoa])    
+    @usuario.pessoa = Pessoa.new(params[:pessoa]) 
+    @usuario.tipo_usuario = TipoUsuario.new(params[:tipo_usuario]) 
 
     respond_to do |format|
       if @usuario.save

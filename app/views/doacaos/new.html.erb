@@ -13,6 +13,8 @@
 			$("#nomepessoa").autocomplete({
 				source: nomesArray
 			});
+			
+			$("#datepicker").datepicker();
 	});
 
 	function digitacpf() {
@@ -47,7 +49,7 @@
 		</div>
 		<div class="field">
 		  <%= f.label "Data:" %>
-		  <%= f.date_select :data_doacao %>
+		  <%= f.text_field :data_doacao, :id=>"datepicker" %>
 		</div>
 	</fieldset>
 	<fieldset class="ui-widget-content ui-corner-all fieldset">

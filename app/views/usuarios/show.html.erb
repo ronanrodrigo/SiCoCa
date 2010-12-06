@@ -15,13 +15,12 @@
 <fieldset class="ui-widget-content ui-corner-all fieldset">
     <legend>Dados da pessoa</legend>
 	<p class="show">
-	  <b class="show">Tipo usuario:</b>
-	  <%= @usuario.tipo_usuario %>
+		<b class="show">Nome:</b>
+		<%= @usuario.pessoa.nome %>
 	</p>
-
 	<p class="show">
-	  <b class="show">Pessoa:</b>
-	  <%= @usuario.pessoa %>
+		<b class="show">CPF:</b>
+		<%= @usuario.pessoa.cpf %>
 	</p>
 </fieldset>
 

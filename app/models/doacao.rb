@@ -1,5 +1,5 @@
 class Doacao < ActiveRecord::Base
-  belongs_to :pessoa #nome do model
+  belongs_to :pessoa
   
   accepts_nested_attributes_for :pessoa
     
@@ -15,6 +15,5 @@ class Doacao < ActiveRecord::Base
     else
       find(:all)
     end
-  end
-  
+  end  
 end

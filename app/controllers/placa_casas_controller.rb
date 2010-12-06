@@ -29,7 +29,7 @@ class PlacaCasasController < ApplicationController
  #   @placa      = Placa.new
  #  @pessoa     = Pessoa.new
     
-    @pessoas = Pessoa.find(:all).map { |u| [u.nome + ' - ' + u.cpf + ';'] }
+    @pessoas = Pessoa.find(:all).map { |u| [u.nome + ' - ' + u.cpf + ';'] }.uniq
 
     respond_to do |format|
       format.html # new.html.erb

@@ -8,10 +8,9 @@
 
 <table>
   <tr>
-    <th>Email</th>
-    <th>Senha</th>
-    <th>Tipo usuario</th>
-    <th>Pessoa</th>
+    <th>Nome</th>
+    <th>e-mail</th>
+    <th>Tipo do usuário</th>
     <th class="botoes"></th>
     <th class="botoes"></th>
     <th class="botoes"></th>
@@ -19,13 +18,12 @@
 
 <% @usuarios.each do |usuario| %>
   <tr>
+    <td><%= usuario.pessoa.nome %> - <%= usuario.pessoa.cpf %></td>
     <td><%= usuario.email %></td>
-    <td><%= usuario.senha %></td>
-    <td><%= usuario.tipo_usuario %></td>
-    <td><%= usuario.pessoa %></td>
-    <td><%= link_to 'Show', usuario %></td>
-    <td><%= link_to 'Edit', edit_usuario_path(usuario) %></td>
-    <td><%= link_to 'Destroy', usuario, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= usuario.tipo_usuario.descricao %></td>
+    <td class="botoes" id="tablebotao"><%= link_to 'Visualizar', usuario %></td>
+    <td class="botoes" id="tablebotao"><%= link_to 'Editar', edit_usuario_path(usuario) %></td>
+    <td class="botoes" id="tablebotao"><%= link_to 'Remover', usuario, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

@@ -1,4 +1,0 @@
-  <div class="field">
-    <%= f.label :pessoa %>
-  	<%= f.select :pessoa_id, @pessoas %>
-  </div>

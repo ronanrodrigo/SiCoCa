@@ -29,7 +29,7 @@ class CarroSomsController < ApplicationController
     @carro_som = CarroSom.new
     @pessoa = Pessoa.new
 
-    @pessoas = Pessoa.find(:all).map { |u| [u.nome + ' - ' + u.cpf + ';'] }
+    @pessoas = Pessoa.find(:all).map { |u| [u.nome + ' - ' + u.cpf + ';'] }.uniq
     
     respond_to do |format|
       format.html # new.html.erb
@@ -45,8 +45,10 @@ class CarroSomsController < ApplicationController
   # POST /carro_soms
   # POST /carro_soms.xml
   def create
-    @carro_som = CarroSom.new(params[:carro_som])
-    @carro_som.pessoa = Pessoa.new(params[:pessoa])    
+    @carro_som = CarroSom.new(params[:carro_som])    
+#    unless CarroSom.find(params[:pessoa.nome])
+    @carro_som.pessoa = Pessoa.new(params[:pessoa])
+ #   end
 
     respond_to do |format|
       if @carro_som.save

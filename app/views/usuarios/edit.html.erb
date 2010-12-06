@@ -44,10 +44,12 @@
 		  <%= f.label "Senha:" %>
 		  <%= f.text_field :senha %>
 		</div>
-		<div class="field">
-		  <%= f.label "Tipo de usuário:" %>
-		  <%= f.text_field :tipo_usuario %>
-		</div>
+		<%= fields_for @usuario.tipo_usuario do |tipo_usuario| %>
+			<div class="field">
+			  <%= tipo_usuario.label "Tipo de usuário:" %>
+			  <%= tipo_usuario.text_field :descricao %>
+			</div>
+		<% end %>
 	</fieldset>
 	<fieldset class="ui-widget-content ui-corner-all fieldset">
 	    <legend>Dados da pessoa</legend>	

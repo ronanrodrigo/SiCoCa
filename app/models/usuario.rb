@@ -3,6 +3,7 @@ class Usuario < ActiveRecord::Base
   belongs_to :pessoa
   
   accepts_nested_attributes_for :tipo_usuario
+  accepts_nested_attributes_for :pessoa
   
   validates :email, :presence => true
   validates :senha, :presence => true
