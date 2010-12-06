@@ -28,7 +28,7 @@ class CaboEleitoralsController < ApplicationController
   def new
     @cabo_eleitoral = CaboEleitoral.new
     @pessoa = Pessoa.new
-    @pessoas = Pessoa.find(:all).map { |u| [u.nome + ' - ' + u.cpf + ';'] }.uniq.uniq
+    @pessoas = Pessoa.find(:all).map { |u| [u.nome + ' - ' + u.cpf + ';'] }.uniq
     
     respond_to do |format|
       format.html # new.html.erb
