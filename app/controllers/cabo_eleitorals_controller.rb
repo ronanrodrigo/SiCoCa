@@ -39,6 +39,7 @@ class CaboEleitoralsController < ApplicationController
   # GET /cabo_eleitorals/1/edit
   def edit
     @cabo_eleitoral = CaboEleitoral.find(params[:id])
+    @pessoas = Pessoa.find(:all).map { |u| [u.nome + ' - ' + u.cpf + ';'] }.uniq
   end
 
   # POST /cabo_eleitorals

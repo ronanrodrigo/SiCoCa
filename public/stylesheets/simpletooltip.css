@@ -1,0 +1,12 @@
+#simpleTooltip { 
+	padding: 3px; 
+	padding-left: 23px;
+	border: 1px solid #A6A7AB; 
+	background: #F2F3F5; 
+	-moz-border-radius: 4px; 
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	background-image: url(../images/help.png);
+	background-repeat: no-repeat;
+	background-position: 2px 2px;
+}

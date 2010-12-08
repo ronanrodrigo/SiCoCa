@@ -3,7 +3,7 @@ class PlacasController < ApplicationController
   # GET /placas.xml
   def index
     @placas = Placa.all
-    @placas = @placas.paginate :page => params[:page], :order => 'created_at DESC', :per_page => 10
+    @placas = @placas.paginate :page => params[:page], :order => 'cep DESC', :per_page => 10
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @placas }
@@ -35,6 +35,7 @@ class PlacasController < ApplicationController
   # GET /placas/1/edit
   def edit
     @placa = Placa.find(params[:id])
+    @pessoas = Pessoa.find(:all).map { |u| [u.nome + ' - ' + u.cpf + ';'] }.uniq
   end
 
   # POST /placas

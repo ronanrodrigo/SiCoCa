@@ -2,7 +2,7 @@ class PessoasController < ApplicationController
   # GET /pessoas
   # GET /pessoas.xml
   def index
-    @pessoas = Pessoa.all
+    @pessoas = Pessoa.find(:all).uniq
     @pessoas = @pessoas.paginate :page => params[:page], :order => 'created_at DESC', :per_page => 10
     
     respond_to do |format|

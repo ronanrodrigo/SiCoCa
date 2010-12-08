@@ -1,0 +1,51 @@
+Olá.
+
+Estou finalizando o meu sistema e encontrei um problema chato. Tenho um botão que executa o destroy do registro. Acontece que este botão só funciona 100% (com o question e removendo) se meus javascript ficarem da seguinte forma:
+
+<%= javascript_include_tag ‘jquery’ %>
+<%= javascript_include_tag :defaults %>
+<%= javascript_include_tag ‘jquery-ui’ %>
+<%= csrf_meta_tag %>
+
+Acontece que o jquery não está funcionando assim. Se eu colocar o :defaults antes do ‘jquery’ funciona o jquery mas não funciona o botão de excluir.
+
+<%= javascript_include_tag :defaults %>	
+<%= javascript_include_tag 'jquery' %>
+<%= javascript_include_tag 'jquery-ui' %>
+<%= csrf_meta_tag %>
+
+Já tentei utilizar o jRails da seguinte forma:
+
+<%= javascript_include_tag ‘jquery’ %> 
+<%= javascript_include_tag ‘jquery-ui’ %> 
+<%= javascript_include_tag ‘jrails’ %>
+
+Mas também não funciona o botão. Não sei mais o que fazer, poderiam me ajudar?
+
+
+<!------------------------------------------------>
+
+
+Hi!
+
+I am finishing up my system and found an annoying problem. I have a button that executes the destroy the record. It turns out that this button only works 100% (with the question and then removing) my javascript to get the following:
+
+<%= javascript_include_tag ‘jquery’ %>
+<%= javascript_include_tag :defaults %>
+<%= javascript_include_tag ‘jquery-ui’ %>
+<%= csrf_meta_tag %>
+
+But jquery not working that way. And if I put the: defaults before 'jquery' jquery does not work but the delete button.
+
+<%= javascript_include_tag :defaults %>	
+<%= javascript_include_tag 'jquery' %>
+<%= javascript_include_tag 'jquery-ui' %>
+<%= csrf_meta_tag %>
+
+I've tried using jRails as follows:
+
+<%= javascript_include_tag ‘jquery’ %> 
+<%= javascript_include_tag ‘jquery-ui’ %> 
+<%= javascript_include_tag ‘jrails’ %>
+
+But the button does not work to remove. I do not know what else to do, could you help me?

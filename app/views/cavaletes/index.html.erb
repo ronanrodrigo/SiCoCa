@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag "simpletooltip" %>
+<%= javascript_include_tag "tooltip" %>
 
 <h1>Cavaletes<div class="busca">
 	<% form_tag cavaletes_path, :class=> 'busca' , :method => 'get' do%>
@@ -6,11 +8,19 @@
 	<% end %>		
 </div></h1>
 
+<script type="text/javascript"> 
+$(document).ready(function() {
+	$("#irregulars").simpletooltip();
+	$("#irregularn").simpletooltip();
+});
+</script>
+
 <table>
   <tr>
-    <th>Irregular</th>
+    <th></th>
     <th>Cidade</th>
     <th>Endereço</th>
+    <th>CEP</th>
     <th class="botoes"></th>
     <th class="botoes"></th>
     <th class="botoes"></th>
@@ -18,12 +28,19 @@
 
 <% @cavaletes.each do |cavalete| %>
   <tr>
-    <td><%= cavalete.irregular %></td>
+		<td id="autorizada">
+			<%= if cavalete.irregular == true
+				image_tag("thumb-down.png", :title => "Cavalete irregular", :id => "irregularn")
+			else
+				image_tag("thumb-up.png", :title => "Cavalete correto", :id => "irregulars")
+			end %>
+		</td>
     <td><%= cavalete.placa.cidade %></td>
     <td><%= cavalete.placa.endereco %></td>
+    <td><%= cavalete.placa.cep %></td>
     <td class="botoes"><%= link_to 'Visualizar', cavalete %></td>
     <td class="botoes"><%= link_to 'Editar', edit_cavalete_path(cavalete) %></td>
-    <td class="botoes"><%= link_to 'Remover', cavalete, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td class="botoes"><%= link_to 'Remover', cavalete, :confirm => 'Você tem certeza?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

@@ -40,13 +40,20 @@ class DoacaosController < ApplicationController
   # GET /doacaos/1/edit
   def edit
     @doacao = Doacao.find(params[:id])
+    @pessoas = Pessoa.find(:all).map { |u| [u.nome + ' - ' + u.cpf + ';'] }.uniq
   end
 
   # POST /doacaos
   # POST /doacaos.xml
   def create
     @doacao = Doacao.new(params[:doacao])
-    @doacao.pessoa = Pessoa.new(params[:pessoa])    
+    @doacao.pessoa = Pessoa.new(params[:pessoa])
+    @pessoa = Pessoa.new(params[:pessoa])
+    if @pessoa.nome.present?
+      @doacao.pessoa = @pessoa
+    else
+      @pessoa.save
+    end
     
     respond_to do |format|
       if @doacao.save

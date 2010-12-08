@@ -1,29 +1,34 @@
 <h1>Cavalete <%= @cavalete.id %> <b id="notice"><%= notice %></b></h1>
 <fieldset class="ui-widget-content ui-corner-all fieldset">
-    <legend>Dados do cavalete</legend>
-	<p class="show">
-	  <b class="show">Endereço:</b>
-	  <%= @cavalete.placa.endereco %>
-	</p>
+	<legend>Dados do cavalete</legend>
 
 	<p class="show">
-	  <b class="show">Cidade:</b>
-	  <%= @cavalete.placa.cidade %>
+		<b class="show">Cidade:</b>
+		<%= @cavalete.placa.cidade %>
 	</p>
-
 	<p class="show">
-	  <b class="show">Tamanho:</b>
-	  <%= @cavalete.placa.tamanho %>
+		<b class="show">Endereço:</b>
+		<%= @cavalete.placa.endereco %>
 	</p>
-
 	<p class="show">
-	  <b class="show">Descricao:</b>
-	  <%= @cavalete.placa.descricao %>
+		<b class="show">CEP:</b>
+		<%= @cavalete.placa.cep %>
 	</p>
-
 	<p class="show">
-	  <b class="show">Irregular:</b>
-	  <%= @cavalete.irregular %>
+		<b class="show">Tamanho:</b>
+		<%= @cavalete.placa.tamanho %>
+	</p>
+	<p class="show">
+		<b class="show">Descrição:</b>
+		<%= @cavalete.placa.descricao %>
+	</p>
+	<p class="show">
+		<b class="show">Irregular:</b>
+		<%= if @cavalete.irregular == true
+			"Sim"
+		else
+			"Não"
+		end %>
 	</p>
 </fieldset>
 

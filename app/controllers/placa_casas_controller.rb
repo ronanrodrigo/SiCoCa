@@ -4,7 +4,8 @@ class PlacaCasasController < ApplicationController
   def index
     @placa_casas = PlacaCasa.all
     @placa_casas = PlacaCasa.search(params[:search])
-    @placa_casas = @placa_casas.paginate :page => params[:page], :order => 'created_at DESC', :per_page => 10
+    @placa_casas = @placa_casas.paginate :page => params[:page], :order => 'created_at ASC', :per_page => 10
+#    @placa_casas = @placa_casas.paginate :page =>  params[:page], :per_page => 10, :include => :placas, :order => "placas.cep DESC"
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @placa_casas }
@@ -40,6 +41,7 @@ class PlacaCasasController < ApplicationController
   # GET /placa_casas/1/edit
   def edit
     @placa_casa = PlacaCasa.find(params[:id])
+    @pessoas = Pessoa.find(:all).map { |u| [u.nome + ' - ' + u.cpf + ';'] }.uniq
   end
 
   # POST /placa_casas

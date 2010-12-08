@@ -23,7 +23,7 @@
     <td><%= usuario.tipo_usuario.descricao %></td>
     <td class="botoes" id="tablebotao"><%= link_to 'Visualizar', usuario %></td>
     <td class="botoes" id="tablebotao"><%= link_to 'Editar', edit_usuario_path(usuario) %></td>
-    <td class="botoes" id="tablebotao"><%= link_to 'Remover', usuario, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td class="botoes" id="tablebotao"><%= link_to 'Remover', usuario, :confirm => 'Você tem certeza?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

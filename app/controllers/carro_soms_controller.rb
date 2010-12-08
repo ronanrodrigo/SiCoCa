@@ -40,6 +40,7 @@ class CarroSomsController < ApplicationController
   # GET /carro_soms/1/edit
   def edit
     @carro_som = CarroSom.find(params[:id])
+    @pessoas = Pessoa.find(:all).map { |u| [u.nome + ' - ' + u.cpf + ';'] }.uniq
   end
 
   # POST /carro_soms

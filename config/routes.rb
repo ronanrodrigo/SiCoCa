@@ -3,32 +3,14 @@ Sicoca::Application.routes.draw do
   resources :tipo_usuarios
   resources :pessoas
 
-  resources :cabo_eleitorals do
-    resources :pessoas
-  end
+  resources :cabo_eleitorals , :belongs_to => :pessoa
+  resources :carro_soms , :belongs_to => :pessoa
+  resources :doacaos , :belongs_to => :pessoa
+  resources :usuarios , :belongs_to => :pessoa
+  resources :usuarios , :belongs_to =>  :tipo_usuariosª
+  resources :cavaletes, :belongs_to => :placas
+  resources :placa_casas, :belongs_to => :pessoa
+  resources :placa_casas, :belongs_to => :placas
 
-  resources :carro_soms do
-    resources :pessoas
-  end
-
-  resources :doacaos do
-    resources :pessoas
-  end
-
-  resources :usuarios do
-    resources :pessoas
-    resources :tipo_usuarios
-  end
-
-  resources :cavaletes do
-    resources :placas
-  end
-
-  resources :placa_casas do
-    resources :pessoas
-    resources :placas
-  end
-
-  #get "home/index"
   root :to => "home#index"
 end

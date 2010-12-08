@@ -7,10 +7,12 @@ class Cavalete < ActiveRecord::Base
     if search
       find( :all, 
             :include => [ :placa ], 
-            :conditions => ['placas.endereco LIKE ? or placas.cidade  LIKE ?',
-                            "%#{search}%",       "%#{search}%"])
+            :conditions => ['placas.endereco LIKE ? or placas.cidade  LIKE ? or placas.cep LIKE ?',
+                            "%#{search}%","%#{search}%", "%#{search}%"])
     else
-      find(:all)
+      find(:all,
+           :include => [:placa ],
+           :order => 'placas.cep ASC')
     end
   end
   

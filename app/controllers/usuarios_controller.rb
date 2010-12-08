@@ -40,6 +40,7 @@ class UsuariosController < ApplicationController
   # GET /usuarios/1/edit
   def edit
     @usuario = Usuario.find(params[:id])
+    @pessoas = Pessoa.find(:all).map { |u| [u.nome + ' - ' + u.cpf + ';'] }.uniq
   end
 
   # POST /usuarios

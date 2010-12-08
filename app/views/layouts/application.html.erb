@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SiCoCa - Sistema de Controle de Campanhas</title>
-  <%= stylesheet_link_tag 'reset', 'sicoca', 'jquery-ui-1.8.5.custom', 'imprimir', :media => "all" %>
-<!--  <%= javascript_include_tag 'jquery-1.4.2.min', :defaults, 'jquery-ui-1.8.5.custom.min' %> -->
-	<%= javascript_include_tag :defaults %> 
-</head>
-<script type="text/javascript"> 
-	$(document).ready(function() {		
+	<title>SiCoCa - Sistema de Controle de Campanhas</title>
+	<%= stylesheet_link_tag 'reset', 'sicoca', 'jquery-ui', 'imprimir', "simpletooltip" %>
+	<%= javascript_include_tag "jquery","rails", "jquery-ui", "tooltip" %>
+	<%= csrf_meta_tag %>
+
+	<script type="text/javascript"> 
+	$(document).ready(function() {
 		$( "button, input:submit, a").button();
 		$(":text"	).addClass('text ui-widget-content ui-corner-all');
 		$(":text"	).css({height: 20})
 		$(":select"	).addClass('text ui-widget-content ui-corner-all');
 	});
-</script>
+	</script>
+</head>
+
 <body>
 	<div class="main">
 		<a class="toolbarimg naoimprimir" href="http://localhost:3000" id="imgtopo">
@@ -28,6 +30,7 @@
 			<%= link_to "Manter usuários", usuarios_path, :class => "botaomenu" %>
 		</div>
 		<div class="ui-widget-content ui-corner-all content">
+			<%= javascript_include_tag "jquery","rails", "jquery-ui" %>
 			<%= yield %>
 		</div>
 	</div>

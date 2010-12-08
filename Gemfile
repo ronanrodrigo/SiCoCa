@@ -30,3 +30,4 @@ gem 'mysql2'
 # end
 gem "pdfkit"
 gem "will_paginate"
+gem "bhm-google-maps"

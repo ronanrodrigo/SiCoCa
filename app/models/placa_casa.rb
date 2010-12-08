@@ -9,10 +9,12 @@ class PlacaCasa < ActiveRecord::Base
     if search
       find( :all, 
             :include => [ :pessoa, :placa ], 
-            :conditions => ['pessoas.nome LIKE ? or placas.endereco LIKE ? or placas.cidade  LIKE ?',
-                            "%#{search}%",          "%#{search}%",           "%#{search}%"])
+            :conditions => ['pessoas.nome LIKE ? or placas.endereco LIKE ? or placas.cidade LIKE ? or placas.cep LIKE ?',
+                            "%#{search}%","%#{search}%","%#{search}%","%#{search}%"])
     else
-      find(:all)
+      find(:all,
+           :include => [:placa ],
+           :order => 'placas.cep ASC')
     end
   end
   

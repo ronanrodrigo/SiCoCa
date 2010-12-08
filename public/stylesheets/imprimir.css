@@ -14,24 +14,32 @@
 		page-break-before: always;
 	}
 
-	#pdf_link, #imgtopo, #menutopo, #botoes_rodape,  #tablebotao, a, #autorizada, div.busca, input.btsalvar {
+	#pdf_link, #imgtopo, #menutopo, #botoes_rodape,  
+	#tablebotao, a, #tautorizada, #autorizada, div.busca, input.btsalvar, 
+	td.botoes, th.botoes{
 		display: none;
 	}
 	td, h1{
 		text-align: center;
 	}
-	td{
+	td, th{
+		border: none;
+	}
+
+	td {
+		padding-top: 9px;
+		padding-bottom: 7px;
 		border-bottom-width: 1px;
-		border-style: solid;
-		border-color: #000;
+		border-bottom-style: dotted;
+		border-bottom-color: black;
 	}
-	td.botoes, th.botoes{
-		display: none;
-	}
-	th{
+	th {
+		text-transform: uppercase;
+		padding-top: -4px;
+		padding-bottom: 5px;
 		border-bottom-width: 2px;
-		border-style: solid;
-		border-color: #000;
+		border-bottom-style: solid;
+		border-bottom-color: black;
 	}
 	table{
 		width: 100%;

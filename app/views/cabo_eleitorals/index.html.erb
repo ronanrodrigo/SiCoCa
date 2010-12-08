@@ -23,7 +23,7 @@
     <td><%= cabo_eleitoral.pessoa.nome %> - <%= cabo_eleitoral.pessoa.cpf %></td>
     <td class="botoes"><%= link_to 'Visualizar', cabo_eleitoral %></td>
     <td class="botoes"><%= link_to 'Editar', edit_cabo_eleitoral_path(cabo_eleitoral) %></td>
-    <td class="botoes"><%= link_to 'Remover', cabo_eleitoral, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td class="botoes"><%= link_to 'Remover', cabo_eleitoral, :confirm => 'Você tem certeza?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

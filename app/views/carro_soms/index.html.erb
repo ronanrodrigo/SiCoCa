@@ -23,7 +23,7 @@
     <td><%= carro_som.pessoa.nome + " - " + carro_som.pessoa.cpf %></td>
     <td class="botoes"><%= link_to 'Visualizar', carro_som %></td>
     <td class="botoes"><%= link_to 'Editar', edit_carro_som_path(carro_som) %></td>
-    <td class="botoes"><%= link_to 'Remover', carro_som, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td class="botoes"><%= link_to 'Remover', carro_som, :confirm => 'Você tem certeza?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
