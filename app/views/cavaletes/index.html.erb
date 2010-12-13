@@ -17,7 +17,7 @@ $(document).ready(function() {
 
 <table>
   <tr>
-    <th></th>
+		<th id="tautorizada" width="10px"></th>
     <th>Cidade</th>
     <th>Endereço</th>
     <th>CEP</th>
@@ -28,7 +28,7 @@ $(document).ready(function() {
 
 <% @cavaletes.each do |cavalete| %>
   <tr>
-		<td id="autorizada">
+		<td id="autorizada" width="10px">
 			<%= if cavalete.irregular == true
 				image_tag("thumb-down.png", :title => "Cavalete irregular", :id => "irregularn")
 			else

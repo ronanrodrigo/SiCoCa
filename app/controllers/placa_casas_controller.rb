@@ -5,7 +5,17 @@ class PlacaCasasController < ApplicationController
     @placa_casas = PlacaCasa.all
     @placa_casas = PlacaCasa.search(params[:search])
     @placa_casas = @placa_casas.paginate :page => params[:page], :order => 'created_at ASC', :per_page => 10
-#    @placa_casas = @placa_casas.paginate :page =>  params[:page], :per_page => 10, :include => :placas, :order => "placas.cep DESC"
+
+    @map = GMap.new("map_div")
+    @map.control_init(:large_map => true,:map_type => true)
+    @map.set_map_type_init(GMapType::G_NORMAL_MAP)
+    @map.center_zoom_init(@placa_casas.first.placa.fetch_coordinates,14)
+
+    @placa_casas.each do |placa_casa|
+      @map.overlay_init(GMarker.new([placa_casa.placa.latitude,placa_casa.placa.longitude], :title => "Placa residencial", :info_window => "<b>Placa residencial</b><BR>" + placa_casa.placa.endereco))
+      @marker = GMarker.new(placa_casa.placa.fetch_coordinates,:title => "Update", :info_window => "I have been placed through RJS")
+    end
+
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @placa_casas }
@@ -27,9 +37,9 @@ class PlacaCasasController < ApplicationController
   # GET /placa_casas/new.xml
   def new
     @placa_casa = PlacaCasa.new
- #   @placa      = Placa.new
- #  @pessoa     = Pessoa.new
-    
+    #   @placa      = Placa.new
+    #  @pessoa     = Pessoa.new
+
     @pessoas = Pessoa.find(:all).map { |u| [u.nome + ' - ' + u.cpf + ';'] }.uniq
 
     respond_to do |format|
@@ -49,8 +59,8 @@ class PlacaCasasController < ApplicationController
   def create
     @placa_casa = PlacaCasa.new(params[:placa_casa])
     @placa_casa.pessoa = Pessoa.new(params[:pessoa])    
-    @placa_casa.placa = Placa.new(params[:placa])    
-    
+    @placa_casa.placa = Placa.new(params[:placa])
+
     respond_to do |format|
       if @placa_casa.save
         format.html { redirect_to(@placa_casa, :notice => ' - Placa cadastrada com sucesso.') }
@@ -68,7 +78,7 @@ class PlacaCasasController < ApplicationController
     @placa_casa = PlacaCasa.find(params[:id])
     @placa_casa.pessoa.update_attributes(params[:pessoa])  
     @placa_casa.placa.update_attributes(params[:placa])
-    
+
     respond_to do |format|
       if @placa_casa.update_attributes(params[:placa_casa])
         format.html { redirect_to(@placa_casa, :notice => ' - Dados atualizados com sucesso.') }
@@ -91,17 +101,11 @@ class PlacaCasasController < ApplicationController
       format.xml  { head :ok }
     end
   end
-  
+
   def filepdf
-    # PDFKit.new takes the HTML and any options for wkhtmltopdf
-    # run `wkhtmltopdf --extended-help` for a full list of options
     kit = PDFKit.new(html, :page_size => 'Letter')
     kit.stylesheets << '/path/to/css/file'
-
-    # Git an inline PDF
     pdf = kit.to_pdf
-
-    # Save the PDF to a file
     file = kit.to_file('/path/to/save/pdf')
   end
 end

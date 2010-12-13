@@ -18,4 +18,5 @@ class PlacaCasa < ActiveRecord::Base
     end
   end
   
+  
 end

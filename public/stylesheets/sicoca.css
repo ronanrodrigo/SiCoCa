@@ -159,6 +159,14 @@ input.btsalvar{
 	height:23px;
 	font-size: 12px;
 }
-#irregularn, #irregulars, #imgautorizas, #imgautorizas{
+#irregularn, #irregulars, #imgautorizas, #imgautorizan{
 	vertical-align: middle;
+}
+#map_div{
+	margin-top: -5px;
+	margin-bottom: 5px;
+	border: 1px solid #aaaaaa; 
+	-moz-border-radius: 4px; 
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
 }

@@ -31,3 +31,5 @@ gem 'mysql2'
 gem "pdfkit"
 gem "will_paginate"
 gem "bhm-google-maps"
+require 'rubygems'
+gem "rails-geocoder", :require => "geocoder"
