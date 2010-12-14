@@ -2,8 +2,9 @@
 <html>
 <head>
 	<title>SiCoCa - Sistema de Controle de Campanhas</title>
-	<%= stylesheet_link_tag 'reset', 'sicoca', 'jquery-ui', 'imprimir', "simpletooltip" %>
-	<%= javascript_include_tag "jquery","rails", "jquery-ui", "tooltip", "googlemaps" %>
+	<%= stylesheet_link_tag 'reset', 'sicoca', 'jquery-ui', 'imprimir', 'simpletooltip', :media => "all"  %>
+	<%= javascript_include_tag "jquery","rails", "jquery-ui", "tooltip", 'googlemaps' %>
+  <script src="http://maps.google.com/maps?file=api&amp;v=2.x&amp;key=ABQIAAAAsLuVwzoctv5Qdco_CapMIhQfFTG3ZIrwPnaM1-BOFI-jKPW2lhRdrfK3ES6knzNLjNL4je8U6Mmw5w&amp;hl=&amp;sensor=false" type="text/javascript"></script> 
 	
 	<%= csrf_meta_tag %>
 
@@ -31,7 +32,7 @@
 			<%= link_to "Manter usuários", usuarios_path, :class => "botaomenu" %>
 		</div>
 		<div class="ui-widget-content ui-corner-all content">
-			<%= javascript_include_tag "jquery","rails", "jquery-ui" %>
+					<h1 class="relatorio">SiCoCa - Sistema para Controle de Campanhas</h1>
 			<%= yield %>
 		</div>
 	</div>

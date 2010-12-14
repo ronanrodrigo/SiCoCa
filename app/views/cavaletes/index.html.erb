@@ -1,12 +1,7 @@
 <%= stylesheet_link_tag "simpletooltip" %>
 <%= javascript_include_tag "tooltip" %>
+<%= javascript_include_tag "ym4r-gm" %>
 
-<h1>Cavaletes<div class="busca">
-	<% form_tag cavaletes_path, :class=> 'busca' , :method => 'get' do%>
-		<%= text_field_tag :search, params[:search], :class => 'txtsalvar' %>
-		<%= submit_tag "Buscar", :name => nil, :class => 'btsalvar' %>
-	<% end %>		
-</div></h1>
 
 <script type="text/javascript"> 
 $(document).ready(function() {
@@ -15,12 +10,20 @@ $(document).ready(function() {
 });
 </script>
 
+<h1>Cavaletes<div class="busca">
+	<% form_tag cavaletes_path, :class=> 'busca' , :method => 'get' do%>
+	<%= text_field_tag :search, params[:search], :class => 'txtsalvar' %>
+	<%= submit_tag "Buscar", :name => nil, :class => 'btsalvar' %>
+	<% end %>		
+</div></h1>
+
+<%= raw(@map.to_html) %> <%= raw(@map.div(:width => 787, :height => 200)) %>
+
 <table>
   <tr>
 		<th id="tautorizada" width="10px"></th>
     <th>Cidade</th>
     <th>Endereço</th>
-    <th>CEP</th>
     <th class="botoes"></th>
     <th class="botoes"></th>
     <th class="botoes"></th>
@@ -37,7 +40,6 @@ $(document).ready(function() {
 		</td>
     <td><%= cavalete.placa.cidade %></td>
     <td><%= cavalete.placa.endereco %></td>
-    <td><%= cavalete.placa.cep %></td>
     <td class="botoes"><%= link_to 'Visualizar', cavalete %></td>
     <td class="botoes"><%= link_to 'Editar', edit_cavalete_path(cavalete) %></td>
     <td class="botoes"><%= link_to 'Remover', cavalete, :confirm => 'Você tem certeza?', :method => :delete %></td>
@@ -50,5 +52,5 @@ $(document).ready(function() {
 <div class="botoes_rodape" id="botoes_rodape">
 	<%= link_to 'Cadastrar cavalete', new_cavalete_path %> |
 	<%= link_to "Gerar relatório", cavaletes_path(@cavalete, :format => "pdf") %>
-	<%= will_paginate @doacaos %>
+	<%= will_paginate @cavalete %>
 </div>

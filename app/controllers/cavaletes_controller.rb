@@ -5,6 +5,18 @@ class CavaletesController < ApplicationController
     @cavaletes = Cavalete.all
     @cavaletes = Cavalete.search(params[:search])
     @cavaletes = @cavaletes.paginate :page => params[:page], :order => 'placas.cep DESC', :per_page => 10
+    
+    @map = GMap.new("map_div")
+    @map.control_init(:large_map => true,:map_type => true)
+    @map.set_map_type_init(GMapType::G_NORMAL_MAP)
+    @map.center_zoom_init(@cavaletes.first.placa.fetch_coordinates,11)
+
+    @cavaletes.each do |cavalete|
+      @map.overlay_init(GMarker.new([cavalete.placa.latitude,cavalete.placa.longitude], :title => "Placa residencial", :info_window => "<b>Placa residencial</b><BR>" + cavalete.placa.endereco))
+      @marker = GMarker.new(cavalete.placa.fetch_coordinates,:title => "Update", :info_window => "I have been placed through RJS")
+    end
+    
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @cavaletes }

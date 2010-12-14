@@ -8,9 +8,9 @@ class Placa < ActiveRecord::Base
   validates :cidade,    :presence => true
   validates :tamanho,   :presence => true
 
-  geocoded_by :location #joga latitude e longitude nos campos
+  geocoded_by :endereco #joga latitude e longitude nos campos
   
-  def location
-    [:endereco, :cidade, "SC", "Brazil"].compact.join(', ')
-  end
+#  def location
+#    [:endereco, :cidade, "SC", "Brazil"].compact.join(', ')
+#  end
 end

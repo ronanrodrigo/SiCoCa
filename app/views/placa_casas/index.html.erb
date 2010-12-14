@@ -1,7 +1,6 @@
 <%= stylesheet_link_tag "simpletooltip" %>
 <%= javascript_include_tag "tooltip" %>
 <%= javascript_include_tag "ym4r-gm" %>
-<script src="http://maps.google.com/maps?file=api&amp;v=2.x&amp;key=ABQIAAAAsLuVwzoctv5Qdco_CapMIhQfFTG3ZIrwPnaM1-BOFI-jKPW2lhRdrfK3ES6knzNLjNL4je8U6Mmw5w&amp;hl=&amp;sensor=false" type="text/javascript"></script> 
 
 
 <script type="text/javascript"> 
@@ -10,7 +9,7 @@ $(document).ready(function() {
 	$("#imgautorizan").simpletooltip();
 });
 </script>
-	<% form_tag placa_casas_path, :class=> 'busca' , :method => 'get' do%>
+
 <h1>Placas em residências<div class="busca">
 	<% form_tag placa_casas_path, :class=> 'busca' , :method => 'get' do%>
 	<%= text_field_tag :search, params[:search], :class => 'txtsalvar' %>
@@ -25,7 +24,6 @@ $(document).ready(function() {
 		<th id="tautorizada" width="10px"></th>
 		<th>Cidade</th>
 		<th>Endereço</th>
-		<th>CEP</th>
 		<th>Utilizador</th>
 		<th class="botoes"></th>
 		<th class="botoes"></th>
@@ -43,7 +41,6 @@ $(document).ready(function() {
 		</td>
 		<td><%= placa_casa.placa.cidade %></td>
 		<td><%= placa_casa.placa.endereco %></td>
-		<td><%= placa_casa.placa.cep %></td>
 		<td><%= placa_casa.pessoa.nome %></td>
 		<td class="botoes"><%= link_to 'Visualizar', placa_casa %></td>
 		<td class="botoes"><%= link_to 'Editar', edit_placa_casa_path(placa_casa) %></td>
@@ -57,5 +54,5 @@ $(document).ready(function() {
 <div class="botoes_rodape" id="botoes_rodape">
 	<%= link_to 'Cadastrar placa', new_placa_casa_path %> |
 	<%= link_to "Gerar relatório", placa_casas_path(@placa_casa, :format => "pdf") %>
-	<%= will_paginate @doacaos %>
+	<%= will_paginate @placa_casa %>
 </div>

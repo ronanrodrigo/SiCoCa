@@ -170,3 +170,6 @@ input.btsalvar{
 	-webkit-border-radius: 4px;
 	border-radius: 4px;
 }
+h1.relatorio{
+	display: none;
+}

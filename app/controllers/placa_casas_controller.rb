@@ -9,7 +9,7 @@ class PlacaCasasController < ApplicationController
     @map = GMap.new("map_div")
     @map.control_init(:large_map => true,:map_type => true)
     @map.set_map_type_init(GMapType::G_NORMAL_MAP)
-    @map.center_zoom_init(@placa_casas.first.placa.fetch_coordinates,14)
+    @map.center_zoom_init(@placa_casas.first.placa.fetch_coordinates,11)
 
     @placa_casas.each do |placa_casa|
       @map.overlay_init(GMarker.new([placa_casa.placa.latitude,placa_casa.placa.longitude], :title => "Placa residencial", :info_window => "<b>Placa residencial</b><BR>" + placa_casa.placa.endereco))

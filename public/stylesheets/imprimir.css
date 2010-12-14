@@ -50,4 +50,9 @@
 		margin-top: 20px;
 		margin-left: 17px;
 	}
+	h1.relatorio{
+		font-size: 20px;
+		display: block;
+		padding-top: 10px;
+	}
 }
