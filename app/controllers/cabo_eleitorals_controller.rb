@@ -1,4 +1,7 @@
 class CaboEleitoralsController < ApplicationController
+  
+  before_filter :authenticate
+  
   # GET /cabo_eleitorals
   # GET /cabo_eleitorals.xml
   def index
@@ -85,6 +88,16 @@ class CaboEleitoralsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(cabo_eleitorals_url) }
       format.xml  { head :ok }
+    end
+  end
+  
+  protected
+  
+  def authenticate
+    if session[:logged]
+      true
+    else
+      redirect_to :root
     end
   end
 end

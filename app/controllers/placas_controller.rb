@@ -1,4 +1,7 @@
 class PlacasController < ApplicationController
+
+  before_filter :authenticate
+
   # GET /placas
   # GET /placas.xml
   def index
@@ -79,6 +82,16 @@ class PlacasController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(placas_url) }
       format.xml  { head :ok }
+    end
+  end
+  
+  protected
+  
+  def authenticate
+    if session[:logged]
+      true
+    else
+      redirect_to :root
     end
   end
 end

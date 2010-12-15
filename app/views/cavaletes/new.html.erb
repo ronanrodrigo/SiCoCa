@@ -1,5 +1,5 @@
 <h1>Novo cavalete</h1>
-
+<%= javascript_include_tag 'jquery','rails', 'jquery-ui', 'tooltip', 'googlemaps', 'ym4r-gm' %>
 <%= form_for :cavalete, :url => { :action => :create } do |f| %>
 
 <% if @cavalete.errors.any? %>

@@ -1,4 +1,7 @@
 class UsuariosController < ApplicationController
+
+  before_filter :authenticate
+
   # GET /usuarios
   # GET /usuarios.xml
   def index
@@ -87,6 +90,16 @@ class UsuariosController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(usuarios_url) }
       format.xml  { head :ok }
+    end
+  end
+  
+  protected
+  
+  def authenticate
+    if session[:logged]
+      true
+    else
+      redirect_to :root
     end
   end
 end

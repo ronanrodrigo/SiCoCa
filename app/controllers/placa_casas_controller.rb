@@ -1,4 +1,7 @@
 class PlacaCasasController < ApplicationController
+  
+  before_filter :authenticate
+  
   # GET /placa_casas
   # GET /placa_casas.xml
   def index
@@ -107,5 +110,15 @@ class PlacaCasasController < ApplicationController
     kit.stylesheets << '/path/to/css/file'
     pdf = kit.to_pdf
     file = kit.to_file('/path/to/save/pdf')
+  end
+  
+  protected
+  
+  def authenticate
+    if session[:logged]
+      true
+    else
+      redirect_to :root
+    end
   end
 end

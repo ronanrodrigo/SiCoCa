@@ -1,4 +1,7 @@
 class CavaletesController < ApplicationController
+  
+  before_filter :authenticate
+  
   # GET /cavaletes
   # GET /cavaletes.xml
   def index
@@ -12,7 +15,7 @@ class CavaletesController < ApplicationController
     @map.center_zoom_init(@cavaletes.first.placa.fetch_coordinates,11)
 
     @cavaletes.each do |cavalete|
-      @map.overlay_init(GMarker.new([cavalete.placa.latitude,cavalete.placa.longitude], :title => "Placa residencial", :info_window => "<b>Placa residencial</b><BR>" + cavalete.placa.endereco))
+      @map.overlay_init(GMarker.new([cavalete.placa.latitude,cavalete.placa.longitude], :title => "Cavalete", :info_window => "<b>Cavalete</b><BR>" + cavalete.placa.endereco))
       @marker = GMarker.new(cavalete.placa.fetch_coordinates,:title => "Update", :info_window => "I have been placed through RJS")
     end
     
@@ -94,6 +97,16 @@ class CavaletesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(cavaletes_url) }
       format.xml  { head :ok }
+    end
+  end
+  
+  protected
+  
+  def authenticate
+    if session[:logged]
+      true
+    else
+      redirect_to :root
     end
   end
 end

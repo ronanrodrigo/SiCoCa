@@ -1,4 +1,7 @@
 class PessoasController < ApplicationController
+  
+  before_filter :authenticate
+  
   # GET /pessoas
   # GET /pessoas.xml
   def index
@@ -79,6 +82,16 @@ class PessoasController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(pessoas_url) }
       format.xml  { head :ok }
+    end
+  end
+  
+  protected
+  
+  def authenticate
+    if session[:logged]
+      true
+    else
+      redirect_to :root
     end
   end
 end

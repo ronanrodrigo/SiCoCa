@@ -4,23 +4,23 @@
 	<title>SiCoCa - Sistema de Controle de Campanhas</title>
 	<%= stylesheet_link_tag 'reset', 'sicoca', 'jquery-ui', 'imprimir', 'simpletooltip', :media => "all"  %>
 	<%= javascript_include_tag "jquery","rails", "jquery-ui", "tooltip", 'googlemaps' %>
-  <script src="http://maps.google.com/maps?file=api&amp;v=2.x&amp;key=ABQIAAAAsLuVwzoctv5Qdco_CapMIhQfFTG3ZIrwPnaM1-BOFI-jKPW2lhRdrfK3ES6knzNLjNL4je8U6Mmw5w&amp;hl=&amp;sensor=false" type="text/javascript"></script> 
-	
+	<script src="http://maps.google.com/maps?file=api&amp;v=2.x&amp;key=ABQIAAAAsLuVwzoctv5Qdco_CapMIhQfFTG3ZIrwPnaM1-BOFI-jKPW2lhRdrfK3ES6knzNLjNL4je8U6Mmw5w&amp;hl=&amp;sensor=false" type="text/javascript"></script> 
+
 	<%= csrf_meta_tag %>
 
 	<script type="text/javascript"> 
 	$(document).ready(function() {
-		$( "button, input:submit, a").button();
-		$(":text"	).addClass('text ui-widget-content ui-corner-all');
-		$(":text"	).css({height: 20})
-		$(":select"	).addClass('text ui-widget-content ui-corner-all');
+		$( "button, input:submit, a" ).button();
+		$( ":text, :password" ).addClass('text ui-widget-content ui-corner-all');
+		$( ":text, :password" ).css({height: 20})
+		$( ":select" ).addClass('text ui-widget-content ui-corner-all');
 	});
 	</script>
 </head>
 
 <body>
 	<div class="main">
-		<a class="toolbarimg naoimprimir" href="http://localhost:3000" id="imgtopo">
+		<a class="toolbarimg naoimprimir" href="http://localhost:3000/home" id="imgtopo">
 			<img class="header" src="../../../images/assis.png">
 		</a>
 		<div class="ui-widget-content ui-corner-all toolbar ui-widget-header barrabotoes" id="menutopo">
@@ -32,8 +32,12 @@
 			<%= link_to "Manter usuários", usuarios_path, :class => "botaomenu" %>
 		</div>
 		<div class="ui-widget-content ui-corner-all content">
-					<h1 class="relatorio">SiCoCa - Sistema para Controle de Campanhas</h1>
+			<h1 class="relatorio">SiCoCa - Sistema para Controle de Campanhas</h1>
+			<%= javascript_include_tag 'jquery','rails', 'jquery-ui', 'tooltip', 'googlemaps', 'ym4r-gm' %>
 			<%= yield %>
+			<% if session[:logged] %>
+				<%= link_to "Sair", session_path(1), :method => :delete, :id => 'sair' %>
+			<% end %>
 		</div>
 	</div>
 </body>

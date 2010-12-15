@@ -1,4 +1,7 @@
 class DoacaosController < ApplicationController
+  
+  before_filter :authenticate
+  
   # GET /doacaos
   # GET /doacaos.xml
   def index
@@ -92,6 +95,16 @@ class DoacaosController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(doacaos_url) }
       format.xml  { head :ok }
+    end
+  end
+  
+  protected
+  
+  def authenticate
+    if session[:logged]
+      true
+    else
+      redirect_to :root
     end
   end
 end

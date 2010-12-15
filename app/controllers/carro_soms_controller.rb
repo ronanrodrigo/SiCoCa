@@ -1,4 +1,7 @@
 class CarroSomsController < ApplicationController
+  
+  before_filter :authenticate
+  
   # GET /carro_soms
   # GET /carro_soms.xml
   def index
@@ -88,6 +91,16 @@ class CarroSomsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(carro_soms_url) }
       format.xml  { head :ok }
+    end
+  end
+  
+  protected
+  
+  def authenticate
+    if session[:logged]
+      true
+    else
+      redirect_to :root
     end
   end
 end
