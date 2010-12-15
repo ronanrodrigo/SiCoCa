@@ -173,3 +173,18 @@ input.btsalvar{
 h1.relatorio{
 	display: none;
 }
+#sair{
+	float: right;
+	margin-top: -27px;
+	margin-right: -2px;
+}
+div.fieldlogin{
+	margin-left: 160px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+button.login{
+	width: 190px;
+	margin-left: 300px;
+	margin-bottom: 5px;
+}

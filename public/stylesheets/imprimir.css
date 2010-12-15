@@ -16,7 +16,7 @@
 
 	#pdf_link, #imgtopo, #menutopo, #botoes_rodape,  
 	#tablebotao, a, #tautorizada, #autorizada, div.busca, input.btsalvar, 
-	td.botoes, th.botoes{
+	td.botoes, th.botoes, #sair{
 		display: none;
 	}
 	td, h1{
